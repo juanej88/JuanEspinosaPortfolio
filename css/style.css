@@ -6,13 +6,42 @@ make all the website more flexible when modifying it */
    border: 0;
    margin: 0;
    font-family: 'Montserrat', sans-serif;
-   font-size: 15px;
+   font-size: 16px;
+   text-decoration: none;
+   list-style: none;
+   color: inherit;
+}
+
+/* The header section holds a navigation tab which
+has all the links within the website */
+
+header {
+   position: fixed;
+   width: 100%;
+   background-color: hsla(360, 0%, 10%, 0.8);
+   color: hsla(360, 0%, 100%, 1);
+   display: grid;
+   grid-template-columns: 2fr 8fr 2fr;
+}
+
+nav {
+   grid-column: 2 / 3;
+}
+
+nav ul {
+   display: flex;
+   justify-content: flex-end;
+}
+
+nav ul li {
+   padding: .5rem 1rem;
+   margin: .5rem 0;
 }
 
 /* This section is the style which will be used on
 the "firstSection" */
 
-section.firstSection {
+section#firstSection {
    background-color: hsla(200, 100%, 50%, 1);
    color: hsla(360, 100%, 100%, 1);
    display: grid;
@@ -27,22 +56,27 @@ div.introMessage {
 
 h1.myName {
    font-weight: 700;
-   font-size: 4em;
+   font-size: 4rem;
+   margin: 0.25em 0;
 }
 
-h2.greeting {
+h2#greeting {
    font-weight: 400;
-   font-size: 2.5em;
+   font-size: 2.5rem;
 }
 
 p.message {
    font-weight: 400;
-   font-size: 1.8em;
+   font-size: 1.5rem;
+}
+
+p strong {
+   font-size: 1.5rem;
 }
 
 /* This are the icons used in the footer */
 
 .fab {
-   font-size: 3em;
+   font-size: 3rem;
    color: hsla(200, 100%, 50%, 1);
 }
