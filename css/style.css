@@ -1,0 +1,48 @@
+/* I reset the padding, border and margin to zero in order to
+make all the website more flexible when modifying it */
+
+* {
+   padding: 0;
+   border: 0;
+   margin: 0;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 15px;
+}
+
+/* This section is the style which will be used on
+the "firstSection" */
+
+section.firstSection {
+   background-color: hsla(200, 100%, 50%, 1);
+   color: hsla(360, 100%, 100%, 1);
+   display: grid;
+   width: 100%;
+   height: 100vh;
+   grid-template: repeat(2, 1fr) 3fr 1fr / 2fr 8fr 2fr;
+}
+
+div.introMessage {
+   grid-area: 3 / 2 / 4 / 3;
+}
+
+h1.myName {
+   font-weight: 700;
+   font-size: 4em;
+}
+
+h2.greeting {
+   font-weight: 400;
+   font-size: 2.5em;
+}
+
+p.message {
+   font-weight: 400;
+   font-size: 1.8em;
+}
+
+/* This are the icons used in the footer */
+
+.fab {
+   font-size: 3em;
+   color: hsla(200, 100%, 50%, 1);
+}
