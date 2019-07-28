@@ -21,11 +21,11 @@ header {
    background-color: hsla(360, 0%, 10%, 0.8);
    color: hsla(360, 0%, 100%, 1);
    display: grid;
-   grid-template-columns: 2fr 8fr 2fr;
+   grid-template-columns: 1fr 10fr 1fr;
 }
 
 nav {
-   grid-column: 2 / 3;
+   grid-column: 2 / span 1;
 }
 
 nav ul {
@@ -51,7 +51,7 @@ section#firstSection {
 }
 
 div.introMessage {
-   grid-area: 3 / 2 / 4 / 3;
+   grid-area: 3 / 2 / span 1 / span 1;
 }
 
 h1.myName {
@@ -76,7 +76,36 @@ p strong {
 
 /* This are the icons used in the footer */
 
-.fab {
+.fab, .fas {
    font-size: 3rem;
    color: hsla(200, 100%, 50%, 1);
+}
+
+/* The footer section holds the copyright text which
+is located at the bottom of the website */
+
+footer {
+   width: 100%;
+   background-color: hsla(360, 0%, 95%, 1);
+   display: grid;
+   grid-template-columns: 2fr 8fr 2fr;
+}
+
+footer p {
+   font-weight: 400;
+   font-size: .75rem;
+   color: hsla(360, 0%, 55%, 1);
+   margin: 1.5rem 0;
+   padding-top: 1rem;
+   border-top: 1px solid hsla(360, 0%, 55%, 1);
+}
+
+.copyright {
+   grid-column: 2 / span 1;
+}
+
+.location {
+   float: right;
+   font-weight: 400;
+   font-size: .75rem;
 }
