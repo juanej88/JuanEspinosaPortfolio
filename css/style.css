@@ -44,10 +44,11 @@ the "firstSection" */
 section#firstSection {
    background-color: hsla(200, 100%, 50%, 1);
    color: hsla(360, 100%, 100%, 1);
-   display: grid;
    width: 100%;
    height: 100vh;
-   grid-template: repeat(2, 1fr) 3fr 1fr / 2fr 8fr 2fr;
+   display: grid;
+   grid-template: repeat(2, 0.5fr) 3fr 1fr / 2fr 8fr 2fr;
+   align-items: center;
 }
 
 div.introMessage {
@@ -74,9 +75,9 @@ p strong {
    font-size: 1.5rem;
 }
 
-/* This are the icons used in the footer */
+/* These are the icons used in the skills section */
 
-.fab, .fas {
+.fab, .fas, .far {
    font-size: 3rem;
    color: hsla(200, 100%, 50%, 1);
 }
