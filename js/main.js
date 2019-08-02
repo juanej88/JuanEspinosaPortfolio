@@ -5,15 +5,14 @@
 
 const changingGreeting = () => {
 
-   // I added the letters 'í', 'é', 'ý' and 'ň' with
-   // the HTML entities 'i&#769', 'e&#769', 'y&#769' and
-   // '&#328' respectively
-
    const greetings = {
       english: ['Good morning', 'Good afternoon', 'Good evening'],
-      spanish: ['Buenos di&#769as', 'Buenas tardes', 'Buenas tardes'],
+      spanish: ['Buenos días', 'Buenas tardes', 'Buenas tardes'],
       french: ['Bonjour', 'Bonjour', 'Bonsoir'],
-      slovak: ['Dobre&#769 ra&#769no', 'Dobry&#769 de&#328', 'Dobry&#769 de&#328']
+      italian: ['Buongiorno', 'Buongiorno', 'Buonasera'],
+      german: ['Guten Morgen', 'Guten Tag', 'Guten Abend'],
+      russian: ['Доброе утро', 'Добрый день', 'Добрый вечер'],
+      slovak: ['Dobré ráno', 'Dobrý deň', 'Dobrý večer']
    };
 
    // This section will define the time when the user visits the website
@@ -22,7 +21,7 @@ const changingGreeting = () => {
    let actualDate = new Date();
    let actualHour = actualDate.getHours();
 
-   if (actualHour >= 18) {
+   if (actualHour >= 17) {
       actualHour = 2;
    } else if (actualHour >= 12) {
       actualHour = 1;
@@ -32,18 +31,18 @@ const changingGreeting = () => {
 
    // This section will change the languages every 2.5 seconds
 
-   const allLanguages = ['english', 'spanish', 'french', 'slovak'];
+   const allLanguages = ['english', 'spanish', 'french', 'italian', 'german', 'russian', 'slovak'];
    let language = 0;
 
    let interval = setInterval(() => {
-      if (language <= 3) {
-         $('#greeting').html(`${greetings[allLanguages[language]][actualHour]},`);
+      if (language <= 6) {
+         $('#greeting').html(`${greetings[allLanguages[language]][actualHour]},`).css({opacity: "0.0"}).animate({opacity: "1"}, 200);
          language++;
       }
       else {
          language = 0;
       }
-   }, 2500);
+   }, 2200);
 
 };
 

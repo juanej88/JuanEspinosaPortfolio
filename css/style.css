@@ -39,9 +39,9 @@ nav ul li {
 }
 
 /* This section is the style which will be used on
-the "firstSection" */
+the "homeSection" */
 
-section#firstSection {
+section#homeSection {
    background-color: hsla(200, 100%, 50%, 1);
    color: hsla(360, 100%, 100%, 1);
    width: 100%;
