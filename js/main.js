@@ -5,6 +5,10 @@
 
 const changingGreeting = () => {
 
+   // I added the letters 'í', 'é', 'ý' and 'ň' with
+   // the HTML entities 'i&#769', 'e&#769', 'y&#769' and
+   // '&#328' respectively
+
    const greetings = {
       english: ['Good morning', 'Good afternoon', 'Good evening'],
       spanish: ['Buenos di&#769as', 'Buenas tardes', 'Buenas tardes'],
@@ -12,17 +16,28 @@ const changingGreeting = () => {
       slovak: ['Dobre&#769 ra&#769no', 'Dobry&#769 de&#328', 'Dobry&#769 de&#328']
    };
 
-   // I added the letters 'í', 'é', 'ý' and 'ň' with
-   // the HTML entities 'i&#769', 'e&#769', 'y&#769' and
-   // '&#328' respectively
+   // This section will define the time when the user visits the website
+   // and then will set up the message correctly (morning, afternoon or evening)
+
+   let actualDate = new Date();
+   let actualHour = actualDate.getHours();
+
+   if (actualHour >= 18) {
+      actualHour = 2;
+   } else if (actualHour >= 12) {
+      actualHour = 1;
+   } else {
+      actualHour = 0;
+   }
+
+   // This section will change the languages every 2.5 seconds
 
    const allLanguages = ['english', 'spanish', 'french', 'slovak'];
-
    let language = 0;
 
    let interval = setInterval(() => {
       if (language <= 3) {
-         $('#greeting').html(`${greetings[allLanguages[language]][0]},`);
+         $('#greeting').html(`${greetings[allLanguages[language]][actualHour]},`);
          language++;
       }
       else {
