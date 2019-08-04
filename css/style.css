@@ -12,16 +12,29 @@ make all the website more flexible when modifying it */
    color: inherit;
 }
 
+@media only screen and (orientation:portrait) {
+   * {
+      font-size: 20px;
+   }
+}
+
+@media only screen and (max-width:950px) {
+   * {
+      font-size: 12px;
+   }
+}
+
 /* The header section holds a navigation tab which
 has all the links within the website */
 
 header {
    position: fixed;
    width: 100%;
-   background-color: hsla(360, 0%, 10%, 0.8);
+   background-color: hsla(0, 0%, 15%, 0.95);
    color: hsla(360, 0%, 100%, 1);
    display: grid;
    grid-template-columns: 1fr 10fr 1fr;
+   z-index: 10;
 }
 
 nav {
@@ -42,9 +55,10 @@ nav ul li {
 the "homeSection" */
 
 section#homeSection {
-   background-color: hsla(200, 100%, 50%, 1);
-   color: hsla(360, 100%, 100%, 1);
+   background-color: hsla(0, 85%, 40%, 1);
+   color: hsla(0, 100%, 100%, 1);
    width: 100%;
+   min-width: 300px;
    height: 100vh;
    display: grid;
    grid-template: repeat(2, 0.5fr) 3fr 1fr / 2fr 8fr 2fr;
@@ -75,11 +89,54 @@ p strong {
    font-size: 1.5rem;
 }
 
-/* These are the icons used in the skills section */
+@media only screen and (max-width:950px), (orientation:portrait) {
+   section#homeSection {
+      grid-template: repeat(2, 0.5fr) 3fr 1fr / 1fr 10fr 1fr;
+   }
+}
+
+/* This section is the style which will be used on
+the "aboutSection" */
+
+section#aboutSection {
+   background-color: hsla(0, 0%, 100%, 1);
+   color: hsla(360, 100%, 100%, 1);
+   width: 100%;
+   height: calc(100vh + 50px);
+   display: grid;
+   grid-template: repeat(2, 0.5fr) 3fr 1fr / 2fr 8fr 2fr;
+   align-items: center;
+}
+
+/* This section is the style which will be used on
+the "skillsSection" */
+
+section#skillsSection {
+   background-color: hsla(0, 85%, 40%, 1);
+   color: hsla(360, 100%, 100%, 1);
+   width: 100%;
+   height: calc(100vh + 50px);
+   display: grid;
+   grid-template: repeat(2, 0.5fr) 3fr 1fr / 2fr 8fr 2fr;
+   align-items: center;
+}
 
 .fab, .fas, .far {
    font-size: 3rem;
-   color: hsla(200, 100%, 50%, 1);
+   color: hsla(0, 0%, 100%, 1);
+}
+
+/* This section is the style which will be used on
+the "worksSection" */
+
+section#worksSection {
+   background-color: hsla(0, 0%, 100%, 1);
+   color: hsla(360, 100%, 100%, 1);
+   width: 100%;
+   height: 100vh;
+   display: grid;
+   grid-template: repeat(2, 0.5fr) 3fr 1fr / 2fr 8fr 2fr;
+   align-items: center;
 }
 
 /* The footer section holds the copyright text which

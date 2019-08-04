@@ -9,10 +9,10 @@ const changingGreeting = () => {
       english: ['Good morning', 'Good afternoon', 'Good evening'],
       spanish: ['Buenos días', 'Buenas tardes', 'Buenas tardes'],
       french: ['Bonjour', 'Bonjour', 'Bonsoir'],
+      slovak: ['Dobré ráno', 'Dobrý deň', 'Dobrý večer'],
       italian: ['Buongiorno', 'Buongiorno', 'Buonasera'],
-      german: ['Guten Morgen', 'Guten Tag', 'Guten Abend'],
       russian: ['Доброе утро', 'Добрый день', 'Добрый вечер'],
-      slovak: ['Dobré ráno', 'Dobrý deň', 'Dobrý večer']
+      german: ['Guten Morgen', 'Guten Tag', 'Guten Abend']
    };
 
    // This section will define the time when the user visits the website
@@ -31,18 +31,18 @@ const changingGreeting = () => {
 
    // This section will change the languages every 2.5 seconds
 
-   const allLanguages = ['english', 'spanish', 'french', 'italian', 'german', 'russian', 'slovak'];
+   const allLanguages = ['english', 'spanish', 'french', 'slovak', 'italian', 'russian', 'german'];
    let language = 0;
 
    let interval = setInterval(() => {
       if (language <= 6) {
-         $('#greeting').html(`${greetings[allLanguages[language]][actualHour]},`).css({opacity: "0.0"}).animate({opacity: "1"}, 200);
+         $('#greeting').html(`${greetings[allLanguages[language]][actualHour]},`).css({opacity: "0.0"}).animate({opacity: "1"}, 250);
          language++;
       }
       else {
          language = 0;
       }
-   }, 2200);
+   }, 2250);
 
 };
 
