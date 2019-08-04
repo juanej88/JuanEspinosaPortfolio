@@ -47,8 +47,18 @@ nav ul {
 }
 
 nav ul li {
-   padding: .5rem 1rem;
+   padding: .5rem 0 .5rem 2rem;
    margin: .5rem 0;
+}
+
+@media only screen and (max-width:950px), (orientation:portrait) {
+   nav ul li {
+      padding: 1rem 0 1rem 2.5rem;
+   }
+
+   .navigationLinks {
+      font-size: 1.2rem;
+   }
 }
 
 /* This section is the style which will be used on

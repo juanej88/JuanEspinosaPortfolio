@@ -40,6 +40,7 @@ const changingGreeting = () => {
          language++;
       }
       else {
+         $('#greeting').html("Hello,").css({opacity: "0.0"}).animate({opacity: "1"}, 250);
          language = 0;
       }
    }, 2250);
