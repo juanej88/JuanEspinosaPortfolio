@@ -83,16 +83,46 @@ nav ul li {
 
 @media only screen and (max-width:950px), (orientation:portrait) {
 
+   header.allScreenMenu {
+      height: 100vh;
+      background-color: hsla(0, 0%, 15%, 1);
+      grid-template: .5fr 7fr / 1fr 10fr 1fr;
+   }
+
    .menuBars {
       padding: 1.5rem 0;
       height: 48px;
       width: 60px;
       visibility: visible;
-      grid-column: 2 / span 1;
+      grid-area: 1 / 2 / span 1 / span 1;
    }
 
    nav {
       display: none;
+   }
+
+   nav.navVisible {
+      display: flex;
+      align-self: start;
+      grid-area: 2 / 1 / span 1 / span 3;
+      border-top: 1px solid hsla(360, 0%, 55%, 1);
+   }
+
+   nav ul {
+      flex-direction: column;
+   }
+
+   nav ul li {
+      position: relative;
+      width: calc(100vw - 200px);
+      left: 100px;
+      border-bottom: 1px solid hsla(360, 0%, 55%, 1);
+      margin: 0;
+      padding: 75px 0;
+   }
+
+   .navigationLinks {
+      font-size: 2.5rem;
    }
 
    /* This part is the animation when closing and opening the
@@ -179,6 +209,17 @@ nav ul li {
       55% {top: 14px;}
       100% {top: 36px;}
    }
+
+   .slideDown {
+      position: relative;
+      animation-name: slideDown;
+      animation-duration: 1s;
+   }
+
+   @keyframes slideDown {
+      0% {top:-1500px;}
+      100% {top: 0px;}
+   }
 }
 
 /* This section is the style which will be used on
@@ -229,7 +270,7 @@ p strong {
 the "aboutSection" */
 
 section#aboutSection {
-   background-color: hsla(0, 0%, 100%, 1);
+   background-color: hsla(180, 50%, 50%, 1);
    color: hsla(360, 100%, 100%, 1);
    width: 100%;
    height: calc(100vh + 50px);
@@ -242,7 +283,7 @@ section#aboutSection {
 the "skillsSection" */
 
 section#skillsSection {
-   background-color: hsla(0, 85%, 40%, 1);
+   background-color: hsla(270, 85%, 40%, 1);
    color: hsla(360, 100%, 100%, 1);
    width: 100%;
    height: calc(100vh + 50px);
@@ -260,7 +301,17 @@ section#skillsSection {
 the "worksSection" */
 
 section#worksSection {
-   background-color: hsla(0, 0%, 100%, 1);
+   background-color: hsla(200, 50%, 50%, 1);
+   color: hsla(360, 100%, 100%, 1);
+   width: 100%;
+   height: 100vh;
+   display: grid;
+   grid-template: repeat(2, 0.5fr) 3fr 1fr / 2fr 8fr 2fr;
+   align-items: center;
+}
+
+section#contactSection {
+   background-color: hsla(60, 50%, 50%, 1);
    color: hsla(360, 100%, 100%, 1);
    width: 100%;
    height: 100vh;

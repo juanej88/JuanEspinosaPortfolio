@@ -77,4 +77,23 @@ $(document).ready(() => {
          }
    });
 
+   $('.menuBars').on('click', () => {
+      $('#webMenu').toggleClass('allScreenMenu');
+      $('.navMenu').toggleClass('navVisible');
+      $('.navMenu').toggleClass('slideDown');
+   });
+
+   $('.navigationLinks').on('click', () => {
+      $('#webMenu').removeClass('allScreenMenu');
+      $('.navMenu').removeClass('navVisible');
+      $('.menuBars').addClass('close');
+      $('.firstLine').removeClass('firstLineOpen');
+      $('.secondLine').removeClass('secondLineOpen');
+      $('.thirdLine').removeClass('thirdLineOpen');
+      $('.firstLine').addClass('firstLineClose');
+      $('.secondLine').addClass('secondLineClose');
+      $('.thirdLine').addClass('thirdLineClose');
+      $('.navMenu').removeClass('slideDown');
+   });
+
 });
