@@ -54,6 +54,27 @@ changingGreeting();
 
 $(document).ready(() => {
 
-console.log('The page is ready to load the rest of javascript');
+   // This function toggles the classes of the menu bars to
+   // animate the opening and closing navigation menu
+
+   $('.menuBars').on('click', () => {
+         if ($('.menuBars').hasClass('close')) {
+            $('.menuBars').removeClass('close');
+            $('.firstLine').addClass('firstLineOpen');
+            $('.secondLine').addClass('secondLineOpen');
+            $('.thirdLine').addClass('thirdLineOpen');
+            $('.firstLine').removeClass('firstLineClose');
+            $('.secondLine').removeClass('secondLineClose');
+            $('.thirdLine').removeClass('thirdLineClose');
+         } else {
+            $('.menuBars').addClass('close');
+            $('.firstLine').removeClass('firstLineOpen');
+            $('.secondLine').removeClass('secondLineOpen');
+            $('.thirdLine').removeClass('thirdLineOpen');
+            $('.firstLine').addClass('firstLineClose');
+            $('.secondLine').addClass('secondLineClose');
+            $('.thirdLine').addClass('thirdLineClose');
+         }
+   });
 
 });
