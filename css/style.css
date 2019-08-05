@@ -38,16 +38,19 @@ header {
    z-index: 10;
 }
 
+.solidBar {
+   visibility: hidden;
+}
+
 .menuBars {
    text-align: center;
    height: 48px;
-   width: 60px;
-   visibility: hidden;
+   width: 75px;
 }
 
 .barLines {
    height: 4px;
-   width: 60px;
+   width: 75px;
    background-color: hsla(0, 0%, 100%, 1);
    border-radius: 1px;
 }
@@ -81,20 +84,33 @@ nav ul li {
    margin: .5rem 0;
 }
 
-@media only screen and (max-width:950px), (orientation:portrait) {
+@media only screen and (min-aspect-ratio: 9/20) and (max-aspect-ratio: 9/16) and (orientation: portrait) {
 
    header.allScreenMenu {
       height: 100vh;
       background-color: hsla(0, 0%, 15%, 1);
-      grid-template: .5fr 7fr / 1fr 10fr 1fr;
+      grid-auto-rows: 110px;
+   }
+
+   .solidBar {
+      position: fixed;
+      display: grid;
+      width: 100%;
+      height: 110px;
+      background-color: hsla(0, 0%, 15%, .95);
+      visibility: visible;
+      z-index: 20;
+      grid-template-columns: 1fr 10fr 1fr;
+   }
+
+   .bottomLine {
+      border-bottom: 1px solid hsla(0, 0%, 55%, 1);
+      opacity: 1;
    }
 
    .menuBars {
-      padding: 1.5rem 0;
-      height: 48px;
-      width: 60px;
-      visibility: visible;
-      grid-area: 1 / 2 / span 1 / span 1;
+      grid-column: 2 / span 1;
+      align-self: center;
    }
 
    nav {
@@ -105,7 +121,6 @@ nav ul li {
       display: flex;
       align-self: start;
       grid-area: 2 / 1 / span 1 / span 3;
-      border-top: 1px solid hsla(360, 0%, 55%, 1);
    }
 
    nav ul {
@@ -131,94 +146,101 @@ nav ul li {
    .firstLineOpen {
       position: relative;
       animation-name: upperLine;
-      animation-duration: .4s;
+      animation-duration: .35s;
       animation-fill-mode: forwards;
    }
 
    @keyframes upperLine {
       0% {top: 0px;}
-      45% {top: 22px;}
-      55% {top: 22px; transform: rotate(0deg);}
+      50% {top: 22px; transform: rotate(0deg);}
       100% {top: 22px; transform: rotate(45deg);}
    }
 
    .secondLineOpen {
       position: relative;
       animation-name: middleLine;
-      animation-duration: .4s;
+      animation-duration: .35s;
       animation-fill-mode: forwards;
    }
 
    @keyframes middleLine {
       0% {transform: rotate(0deg);}
-      55% {transform: rotate(0deg);}
+      50% {transform: rotate(0deg);}
       100% {transform: rotate(45deg);}
    }
 
    .thirdLineOpen {
       position: relative;
       animation-name: lowerLine;
-      animation-duration: .4s;
+      animation-duration: .35s;
       animation-fill-mode: forwards;
    }
 
    @keyframes lowerLine {
       0% {top: 36px;}
       45% {top: 14px;}
-      55% {top: 14px; transform: rotate(0deg);}
+      50% {top: 14px; transform: rotate(0deg);}
       100% {top: 14px; transform: rotate(-45deg);}
    }
 
    .firstLineClose {
       position: relative;
       animation-name: upperLineBack;
-      animation-duration: .4s;
+      animation-duration: .35s;
       animation-fill-mode: forwards;
    }
 
    @keyframes upperLineBack {
       0% {top: 22px; transform: rotate(45deg);}
-      45% {top: 22px; transform: rotate(0deg);}
-      55% {top: 22px;}
+      50% {top: 22px; transform: rotate(0deg);}
       100% {top: 0px;}
    }
 
    .secondLineClose {
       position: relative;
       animation-name: middleLineBack;
-      animation-duration: .4s;
+      animation-duration: .35s;
       animation-fill-mode: forwards;
    }
 
    @keyframes middleLineBack {
       0% {transform: rotate(45deg);}
-      45% {transform: rotate(0deg);}
+      50% {transform: rotate(0deg);}
       100% {transform: rotate(0deg);}
    }
 
    .thirdLineClose {
       position: relative;
       animation-name: lowerLineBack;
-      animation-duration: .4s;
+      animation-duration: .35s;
       animation-fill-mode: forwards;
    }
 
    @keyframes lowerLineBack {
       0% {top: 14px; transform: rotate(-45deg);}
-      45% {top: 14px; transform: rotate(0deg);}
-      55% {top: 14px;}
+      50% {top: 14px; transform: rotate(0deg);}
       100% {top: 36px;}
    }
 
    .slideDown {
-      position: relative;
       animation-name: slideDown;
-      animation-duration: 1s;
+      animation-duration: .35s;
    }
 
    @keyframes slideDown {
-      0% {top:-1500px;}
+      0% {top:-2000px;}
       100% {top: 0px;}
+   }
+
+   .slideUp {
+      animation-name: slideUp;
+      animation-duration: .35s;
+      animation-fill-mode: forwards;
+   }
+
+   @keyframes slideUp {
+      0% {top:0px;}
+      100% {top:-2000px;}
    }
 }
 

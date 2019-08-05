@@ -80,7 +80,8 @@ $(document).ready(() => {
    $('.menuBars').on('click', () => {
       $('#webMenu').toggleClass('allScreenMenu');
       $('.navMenu').toggleClass('navVisible');
-      $('.navMenu').toggleClass('slideDown');
+      $('#webMenu').toggleClass('slideDown');
+      $('.solidBar').toggleClass('bottomLine');
    });
 
    $('.navigationLinks').on('click', () => {
@@ -93,7 +94,9 @@ $(document).ready(() => {
       $('.firstLine').addClass('firstLineClose');
       $('.secondLine').addClass('secondLineClose');
       $('.thirdLine').addClass('thirdLineClose');
-      $('.navMenu').removeClass('slideDown');
+      $('#webMenu').removeClass('slideDown');
+      $('.solidBar').removeClass('bottomLine');
+      $('#webMenu').addClass('slideUp');
    });
 
 });
