@@ -84,7 +84,7 @@ nav ul li {
    margin: .5rem 0;
 }
 
-@media only screen and (min-aspect-ratio: 9/20) and (max-aspect-ratio: 9/16) and (orientation: portrait) {
+@media only screen and (max-width:950px), (orientation:portrait) {
 
    header.allScreenMenu {
       height: 100vh;

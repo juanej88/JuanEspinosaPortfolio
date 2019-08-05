@@ -96,7 +96,7 @@ $(document).ready(() => {
       $('.thirdLine').addClass('thirdLineClose');
       $('#webMenu').removeClass('slideDown');
       $('.solidBar').removeClass('bottomLine');
-      $('#webMenu').addClass('slideUp');
+      // $('#webMenu').addClass('slideUp');
    });
 
 });
