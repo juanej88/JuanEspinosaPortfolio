@@ -10,15 +10,12 @@ make all the website more flexible when modifying it */
    text-decoration: none;
    list-style: none;
    color: inherit;
-}
-
-html {
    scroll-behavior: smooth;
 }
 
 @media only screen and (orientation:portrait) {
    * {
-      font-size: 20px;
+      font-size: 22px;
    }
 }
 
@@ -254,14 +251,18 @@ nav ul li {
 the "homeSection" */
 
 section#homeSection {
-   background-color: hsla(0, 85%, 40%, 1);
+   background-image: url('../pictures/maroubraToMalabar.jpg');
+   background-size: cover;
+   background-position: 85% 85%;
+   /* background-color: hsla(0, 85%, 40%, 1); */
    color: hsla(0, 100%, 100%, 1);
    width: 100%;
    min-width: 300px;
    height: 100vh;
    display: grid;
-   grid-template: repeat(2, 0.5fr) 3fr repeat(2, 0.5fr) / 2fr 8fr 2fr;
+   grid-template: repeat(2, 0.5fr) 3fr repeat(2, 0.5fr) / 1fr 10fr 1fr;
    align-items: center;
+   text-align: right;
 }
 
 div.introMessage {
@@ -272,25 +273,26 @@ div.introMessage {
 
 h1.myName {
    font-weight: 700;
-   font-size: 4rem;
-   margin: 0.25em 0;
+   font-size: 3.75rem;
+   margin: 0.25rem 0 0.75rem 0;
    grid-row: 2 / span 1;
 }
 
 h2#greeting {
    font-weight: 400;
-   font-size: 2.5rem;
+   font-size: 2.25rem;
    grid-row: 1 / span 1;
    align-self: end;
 }
 
 p.message {
    font-weight: 400;
-   font-size: 1.5rem;
+   font-size: 1.25rem;
+   line-height: 2rem;
 }
 
 p strong {
-   font-size: 1.5rem;
+   font-size: 1.25rem;
 }
 
 a.arrow {
@@ -355,10 +357,7 @@ a.arrow {
 }
 
 @media only screen and (max-width:950px), (orientation:portrait) {
-   section#homeSection {
-      grid-template: repeat(2, 0.5fr) 3fr repeat(2, 0.5fr) / 1fr 10fr 1fr;
-   }
-
+   
    a.arrow {
       width: 62px;
       align-self: center;
