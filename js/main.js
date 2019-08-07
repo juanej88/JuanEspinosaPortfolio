@@ -29,19 +29,21 @@ const changingGreeting = () => {
       actualHour = 0;
    }
 
-   // This section will change the languages every 2.5 seconds
+   // This section will change the languages every 2.25 seconds
 
    const allLanguages = ['english', 'spanish', 'french', 'slovak', 'italian', 'russian', 'german'];
-   let language = 0;
+   let language = 1;
+
+   $('#greeting').html(`${greetings[allLanguages[0]][actualHour]},`).css({opacity: '0'}).animate({opacity: '1'}, 250);
 
    let interval = setInterval(() => {
-      if (language <= 6) {
-         $('#greeting').html(`${greetings[allLanguages[language]][actualHour]},`).css({opacity: "0.0"}).animate({opacity: "1"}, 250);
+      if (language >= 1 && language <= 6) {
+         $('#greeting').html(`${greetings[allLanguages[language]][actualHour]},`).css({opacity: '0'}).animate({opacity: '1'}, 250);
          language++;
       }
       else {
-         $('#greeting').html("Hello,").css({opacity: "0.0"}).animate({opacity: "1"}, 250);
-         language = 0;
+         $('#greeting').html(`${greetings[allLanguages[0]][actualHour]},`).css({opacity: '0'}).animate({opacity: '1'}, 250);
+         language = 1;
       }
    }, 2250);
 
@@ -77,26 +79,75 @@ $(document).ready(() => {
          }
    });
 
+   // This function does the animation to slideUp and
+   // slideDown the navigation menu when clicking the
+   // menu icon
+
    $('.menuBars').on('click', () => {
-      $('#webMenu').toggleClass('allScreenMenu');
-      $('.navMenu').toggleClass('navVisible');
+      $('#webMenu').addClass('allScreenMenu');
+      $('.navMenu').addClass('navVisible');
+
       $('#webMenu').toggleClass('slideDown');
+      $('#webMenu').toggleClass('slideUp');
       $('.solidBar').toggleClass('bottomLine');
+
+      if ($('#webMenu').hasClass('slideUp')) {
+         setTimeout(() => {
+            $('#webMenu').removeClass('allScreenMenu');
+            $('.navMenu').removeClass('navVisible');
+         }, 350);
+      }
    });
 
+   // This function does the animation to slideUp the
+   // navigation menu when clicking any section link
+
    $('.navigationLinks').on('click', () => {
-      $('#webMenu').removeClass('allScreenMenu');
-      $('.navMenu').removeClass('navVisible');
       $('.menuBars').addClass('close');
+
       $('.firstLine').removeClass('firstLineOpen');
       $('.secondLine').removeClass('secondLineOpen');
       $('.thirdLine').removeClass('thirdLineOpen');
       $('.firstLine').addClass('firstLineClose');
       $('.secondLine').addClass('secondLineClose');
       $('.thirdLine').addClass('thirdLineClose');
+
+      $('#webMenu').addClass('slideUp');
       $('#webMenu').removeClass('slideDown');
       $('.solidBar').removeClass('bottomLine');
-      // $('#webMenu').addClass('slideUp');
+
+      if ($('#webMenu').hasClass('slideUp')) {
+         setTimeout(() => {
+            $('#webMenu').removeClass('allScreenMenu');
+            $('.navMenu').removeClass('navVisible');
+         }, 350);
+      }
    });
+
+   // This function will add the classes to the arrow
+   // in order to animate it when scrolling down from the
+   // homeSection
+
+   $(window).scroll(() => {
+
+      const scroll = $(window).scrollTop();
+
+      if (scroll < 125) {
+         $('.leftSide').removeClass('flatArrow');
+         $('.leftSide').removeClass('hiddenArrow');
+         $('.rightSide').removeClass('flatArrow');
+         $('.rightSide').removeClass('hiddenArrow');
+      } else if (scroll >=125 && scroll <= 425) {
+         $('.leftSide').addClass('flatArrow');
+         $('.leftSide').removeClass('hiddenArrow');
+         $('.rightSide').addClass('flatArrow');
+         $('.rightSide').removeClass('hiddenArrow');
+      } else if (scroll > 425) {
+         $('.leftSide').addClass('hiddenArrow');
+         $('.rightSide').addClass('hiddenArrow');
+      }
+   });
+
+
 
 });
