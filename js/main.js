@@ -56,27 +56,74 @@ changingGreeting();
 
 $(document).ready(() => {
 
+   // This function makes a smooth transition when clicking
+   // a link a getting to the new section
+
+   $(document).on('click', 'a[href^="#"]', function (e) {
+    e.preventDefault();
+    $('html, body').stop().animate({
+        scrollTop: $($(this).attr('href')).offset().top
+    }, 333, 'linear');
+   });
+
+   // This function will add the class '.addColor' to any anchor,
+   // depending of the section where the user is interacting with,
+   // leaving a gap of 15% before getting to the new section
+
+   const addColor = () => {
+
+      $(window).scroll(() => {
+
+         const windowPosition = $(window).scrollTop();
+
+         let $homeHeight = $('#homeSection').height() - ($('#aboutSection').height() * 0.15);
+         let $aboutHeight = $('#aboutSection').height() + $homeHeight;
+         let $skillsHeight = $('#skillsSection').height() + $aboutHeight;
+         let $projectsLink = $('#projectsSection').height() + $skillsHeight;
+         let $contactHeight = $('#contactSection').height() + $projectsLink;
+
+         if (windowPosition < $homeHeight) {
+            $('.navigationLinks').removeClass('addColor');
+            $('.homeLink').addClass('addColor');
+         } else if (windowPosition >= $homeHeight && windowPosition < $aboutHeight) {
+            $('.navigationLinks').removeClass('addColor');
+            $('.aboutLink').addClass('addColor');
+         } else if (windowPosition >= $aboutHeight && windowPosition < $skillsHeight) {
+            $('.navigationLinks').removeClass('addColor');
+            $('.skillsLink').addClass('addColor');
+         } else if (windowPosition >= $skillsHeight && windowPosition < $projectsLink) {
+            $('.navigationLinks').removeClass('addColor');
+            $('.projectsLink').addClass('addColor');
+         } else if (windowPosition >= $projectsLink && windowPosition < $contactHeight) {
+            $('.navigationLinks').removeClass('addColor');
+            $('.contactLink').addClass('addColor');
+         }
+      });
+   };
+
+   addColor();
+
    // This function toggles the classes of the menu bars to
    // animate the opening and closing navigation menu
 
    $('.menuBars').on('click', () => {
-         if ($('.menuBars').hasClass('close')) {
-            $('.menuBars').removeClass('close');
-            $('.firstLine').addClass('firstLineOpen');
-            $('.secondLine').addClass('secondLineOpen');
-            $('.thirdLine').addClass('thirdLineOpen');
-            $('.firstLine').removeClass('firstLineClose');
-            $('.secondLine').removeClass('secondLineClose');
-            $('.thirdLine').removeClass('thirdLineClose');
-         } else {
-            $('.menuBars').addClass('close');
-            $('.firstLine').removeClass('firstLineOpen');
-            $('.secondLine').removeClass('secondLineOpen');
-            $('.thirdLine').removeClass('thirdLineOpen');
-            $('.firstLine').addClass('firstLineClose');
-            $('.secondLine').addClass('secondLineClose');
-            $('.thirdLine').addClass('thirdLineClose');
-         }
+      if ($('.menuBars').hasClass('close')) {
+         $('.menuBars').removeClass('close');
+         $('.firstLine').addClass('firstLineOpen');
+         $('.secondLine').addClass('secondLineOpen');
+         $('.thirdLine').addClass('thirdLineOpen');
+         $('.firstLine').removeClass('firstLineClose');
+         $('.secondLine').removeClass('secondLineClose');
+         $('.thirdLine').removeClass('thirdLineClose');
+      } else {
+         $('.menuBars').addClass('close');
+         $('.firstLine').removeClass('firstLineOpen');
+         $('.secondLine').removeClass('secondLineOpen');
+         $('.thirdLine').removeClass('thirdLineOpen');
+         $('.firstLine').addClass('firstLineClose');
+         $('.secondLine').addClass('secondLineClose');
+         $('.thirdLine').addClass('thirdLineClose');
+      }
    });
 
    // This function does the animation to slideUp and
@@ -130,19 +177,19 @@ $(document).ready(() => {
 
    $(window).scroll(() => {
 
-      const scroll = $(window).scrollTop();
+      const windowPosition = $(window).scrollTop();
 
-      if (scroll < 125) {
+      if (windowPosition < 125) {
          $('.leftSide').removeClass('flatArrow');
          $('.leftSide').removeClass('hiddenArrow');
          $('.rightSide').removeClass('flatArrow');
          $('.rightSide').removeClass('hiddenArrow');
-      } else if (scroll >=125 && scroll <= 425) {
+      } else if (windowPosition >=125 && windowPosition <= 425) {
          $('.leftSide').addClass('flatArrow');
          $('.leftSide').removeClass('hiddenArrow');
          $('.rightSide').addClass('flatArrow');
          $('.rightSide').removeClass('hiddenArrow');
-      } else if (scroll > 425) {
+      } else if (windowPosition > 425) {
          $('.leftSide').addClass('hiddenArrow');
          $('.rightSide').addClass('hiddenArrow');
       }
