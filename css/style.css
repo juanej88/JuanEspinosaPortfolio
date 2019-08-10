@@ -411,21 +411,21 @@ a.arrow {
 @media only screen and (max-width:950px), (orientation:portrait) {
 
    a.arrow {
-      width: 62px;
+      width: 80px;
       align-self: center;
       grid-area: 4 / 2 / span 1 / span 1;
    }
 
    .leftSide {
       height: 7px;
-      width: 35px;
+      width: 45px;
       border-radius: 3.5px 0 0 3.5px;
    }
 
    .rightSide {
       height: 7px;
-      width: 35px;
-      left: 27px;
+      width: 45px;
+      left: 36px;
       border-radius: 0 3.5px 3.5px 0;
    }
 
@@ -553,22 +553,22 @@ a.arrowUp {
 @media only screen and (max-width:950px), (orientation:portrait) {
 
    a.arrowUp {
-      width: 62px;
+      width: 80px;
       align-self: center;
       grid-area: 4 / 2 / span 1 / span 1;
    }
 
    .leftSideTop {
       height: 7px;
-      width: 35px;
+      width: 45px;
       border-radius: 3.5px 0 0 3.5px;
    }
 
    .rightSideTop {
       height: 7px;
-      width: 35px;
+      width: 45px;
       top: 3px;
-      left: 27px;
+      left: 36px;
       border-radius: 0 3.5px 3.5px 0;
    }
 
