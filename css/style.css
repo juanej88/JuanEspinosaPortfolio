@@ -593,28 +593,28 @@ footer {
 }
 
 @keyframes popUpFooter {
-   0% {bottom: -120px}
+   0% {bottom: -6rem}
    100% {bottom: 0}
 }
 
 .popOutFooter {
    position: fixed;
-   bottom: -120px;
+   bottom: -6rem;
    animation: popOutFooter .25s;
    animation-fill-mode: both;
 }
 
 @keyframes popOutFooter {
    0% {bottom: 0}
-   100% {bottom: -120px}
+   100% {bottom: -6rem}
 }
 
 footer p {
    font-weight: 400;
    font-size: .75rem;
    color: hsla(360, 0%, 55%, 1);
-   margin: 1.5rem 0;
-   padding-top: 1rem;
+   margin: 1rem 0;
+   padding-top: .75rem;
    border-top: 1px solid hsla(360, 0%, 55%, 1);
 }
 

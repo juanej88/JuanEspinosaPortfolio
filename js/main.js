@@ -267,7 +267,7 @@ $(document).ready(() => {
          const windowPosition = $(window).scrollTop();
 
          let $totalHeight = $('#homeSection').height() + $('#aboutSection').height() + $('#skillsSection').height() + ($('#projectsSection').height() * 0.98);
-         let $ArrowUp = $totalHeight - ($('#contactSection').height() * 0.075);
+         let $ArrowUp = $totalHeight - ($('#contactSection').height() * 0.05);
 
          if (windowPosition < $ArrowUp) {
             $('footer').removeClass('fixedFooter');
