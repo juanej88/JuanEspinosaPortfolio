@@ -63,7 +63,7 @@ $(document).ready(() => {
     e.preventDefault();
     $('html, body').stop().animate({
         scrollTop: $($(this).attr('href')).offset().top
-    }, 333, 'linear');
+    }, 350, 'linear');
    });
 
    // This function will add the class '.addColor' to any anchor,
@@ -83,20 +83,25 @@ $(document).ready(() => {
          let $contactHeight = $('#contactSection').height() + $projectsLink;
 
          if (windowPosition < $homeHeight) {
-            $('.navigationLinks').removeClass('addColor');
-            $('.homeLink').addClass('addColor');
+            $('.navigationLinks').addClass('removeColor');
+            $('.homeLink').removeClass('removeColor');
+            $('.homeLink').addClass('barColor1');
          } else if (windowPosition >= $homeHeight && windowPosition < $aboutHeight) {
-            $('.navigationLinks').removeClass('addColor');
-            $('.aboutLink').addClass('addColor');
+            $('.navigationLinks').addClass('removeColor');
+            $('.aboutLink').removeClass('removeColor');
+            $('.aboutLink').addClass('barColor2');
          } else if (windowPosition >= $aboutHeight && windowPosition < $skillsHeight) {
-            $('.navigationLinks').removeClass('addColor');
-            $('.skillsLink').addClass('addColor');
+            $('.navigationLinks').addClass('removeColor');
+            $('.skillsLink').removeClass('removeColor');
+            $('.skillsLink').addClass('barColor3');
          } else if (windowPosition >= $skillsHeight && windowPosition < $projectsLink) {
-            $('.navigationLinks').removeClass('addColor');
-            $('.projectsLink').addClass('addColor');
+            $('.navigationLinks').addClass('removeColor');
+            $('.projectsLink').removeClass('removeColor');
+            $('.projectsLink').addClass('barColor4');
          } else if (windowPosition >= $projectsLink && windowPosition < $contactHeight) {
-            $('.navigationLinks').removeClass('addColor');
-            $('.contactLink').addClass('addColor');
+            $('.navigationLinks').addClass('removeColor');
+            $('.contactLink').removeClass('removeColor');
+            $('.contactLink').addClass('barColor5');
          }
       });
    };

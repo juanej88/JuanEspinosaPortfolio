@@ -86,12 +86,31 @@ nav ul li {
 }
 
 .navigationLinks:hover {
-   color: hsla(220, 50%, 70%, 1);
+   color: hsla(0, 0%, 75%, .5);
 }
 
-.addColor {
-   color: hsla(220, 50%, 70%, 1);
-   border-bottom: 2px solid hsla(220, 50%, 70%, 1);
+.barColor1 {
+   border-bottom: 2px solid hsla(220, 70%, 70%, 1);
+}
+
+.barColor2 {
+   border-bottom: 2px solid hsla(80, 60%, 60%, 1);
+}
+
+.barColor3 {
+   border-bottom: 2px solid hsla(270, 50%, 50%, 1);
+}
+
+.barColor4 {
+   border-bottom: 2px solid hsla(150, 50%, 60%, 1);
+}
+
+.barColor5 {
+   border-bottom: 2px solid hsla(0, 75%, 60%, 1);
+}
+
+.removeColor {
+   border-bottom: 0px solid hsla(0, 0%, 100%, 1);
 }
 
 @media only screen and (orientation:portrait) {
@@ -253,6 +272,30 @@ nav ul li {
       0% {top:0px;}
       100% {top:-2000px;}
    }
+
+   .barColor1 {
+      border-bottom: 5px solid hsla(220, 70%, 70%, 1);
+   }
+
+   .barColor2 {
+      border-bottom: 5px solid hsla(80, 60%, 60%, 1);
+   }
+
+   .barColor3 {
+      border-bottom: 5px solid hsla(270, 50%, 50%, 1);
+   }
+
+   .barColor4 {
+      border-bottom: 5px solid hsla(150, 50%, 60%, 1);
+   }
+
+   .barColor5 {
+      border-bottom: 5px solid hsla(0, 75%, 60%, 1);
+   }
+
+   .removeColor {
+      border-bottom: 0px solid hsla(0, 0%, 100%, 1);
+   }
 }
 
 /* This section is the style which will be used on
@@ -391,7 +434,7 @@ a.arrow {
 the "aboutSection" */
 
 section#aboutSection {
-   background-color: hsla(220, 0%, 100%, 1);
+   background-color: hsla(80, 60%, 60%, 1);
    color: hsla(360, 100%, 100%, 1);
    width: 100%;
    height: calc(100vh + 50px);
@@ -404,7 +447,7 @@ section#aboutSection {
 the "skillsSection" */
 
 section#skillsSection {
-   background-color: hsla(220, 50%, 60%, 1);
+   background-color: hsla(0, 0%, 100%, 1);
    color: hsla(360, 100%, 100%, 1);
    width: 100%;
    height: calc(100vh + 50px);
@@ -415,14 +458,14 @@ section#skillsSection {
 
 .fab, .fas, .far {
    font-size: 3rem;
-   color: hsla(0, 0%, 100%, 1);
+   color: hsla(270, 50%, 50%, 1);
 }
 
 /* This section is the style which will be used on
 the "projectsSection" */
 
 section#projectsSection {
-   background-color: hsla(220, 0%, 100%, 1);
+   background-color: hsla(150, 50%, 60%, 1);
    color: hsla(360, 100%, 100%, 1);
    width: 100%;
    height: 100vh;
@@ -432,7 +475,7 @@ section#projectsSection {
 }
 
 section#contactSection {
-   background-color: hsla(220, 50%, 60%, 1);
+   background-color: hsla(0, 75%, 60%, 1);
    color: hsla(360, 100%, 100%, 1);
    width: 100%;
    height: 100vh;
