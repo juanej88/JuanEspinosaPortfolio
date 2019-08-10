@@ -257,6 +257,42 @@ $(document).ready(() => {
       }
    });
 
+   // This function will give a fixed position to the footer
+   // and add an animation to the arrowUp in section 5
 
+   const fixedFooter = () => {
+
+      $(window).scroll(() => {
+
+         const windowPosition = $(window).scrollTop();
+
+         let $totalHeight = $('#homeSection').height() + $('#aboutSection').height() + $('#skillsSection').height() + ($('#projectsSection').height() * 0.98);
+         let $ArrowUp = $totalHeight - ($('#contactSection').height() * 0.075);
+
+         if (windowPosition < $ArrowUp) {
+            $('footer').removeClass('fixedFooter');
+            $('.leftSideTop').addClass('hiddenArrow');
+            $('.rightSideTop').addClass('hiddenArrow');
+         } else if (windowPosition >= $ArrowUp && windowPosition < $totalHeight) {
+            $('footer').removeClass('fixedFooter');
+            $('footer').addClass('popOutFooter');
+            $('.leftSideTop').addClass('flatArrow');
+            $('.rightSideTop').addClass('flatArrow');
+            $('.leftSideTop').removeClass('hiddenArrow');
+            $('.rightSideTop').removeClass('hiddenArrow');
+            $('.leftSideTop').removeClass('leftSideTopAnimation');
+            $('.rightSideTop').removeClass('rightSideTopAnimation');
+         } else if (windowPosition >= $totalHeight) {
+            $('footer').removeClass('popOutFooter');
+            $('footer').addClass('fixedFooter');
+            $('.leftSideTop').removeClass('hiddenArrow');
+            $('.rightSideTop').removeClass('hiddenArrow');
+            $('.leftSideTop').addClass('leftSideTopAnimation');
+            $('.rightSideTop').addClass('rightSideTopAnimation');
+         }
+      });
+   };
+
+   fixedFooter();
 
 });

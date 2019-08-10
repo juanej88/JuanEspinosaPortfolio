@@ -500,9 +500,9 @@ section#contactSection {
 a.arrowUp {
    height: 40px;
    width: 44px;
-   grid-area: 5 / 2 / span 1 / span 1;
+   grid-area: 4 / 2 / span 1 / span 1;
    justify-self: center;
-   align-self: center;
+   align-self: end;
 }
 
 .leftSideTop {
@@ -515,6 +515,18 @@ a.arrowUp {
    background-color: hsla(0, 75%, 60%, 1);
 }
 
+.leftSideTopAnimation {
+   animation-name: leftSideTopAnimation;
+   animation-duration: .25s;
+   animation-timing-function: linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes leftSideTopAnimation {
+   0% {transform: rotate(0deg);}
+   100% {transform: rotate(-30deg);}
+}
+
 .rightSideTop {
    position: relative;
    top: 7px;
@@ -524,6 +536,18 @@ a.arrowUp {
    transform: rotate(30deg);
    border-radius: 0 1.5px 1.5px 0;
    background-color: hsla(0, 75%, 60%, 1);
+}
+
+.rightSideTopAnimation {
+   animation-name: rightSideTopAnimation;
+   animation-duration: .25s;
+   animation-timing-function: linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes rightSideTopAnimation {
+   0% {transform: rotate(0deg);}
+   100% {transform: rotate(30deg);}
 }
 
 @media only screen and (max-width:950px), (orientation:portrait) {
@@ -558,6 +582,31 @@ footer {
    background-color: hsla(360, 0%, 95%, 1);
    display: grid;
    grid-template-columns: 1fr 10fr 1fr;
+
+}
+
+.fixedFooter {
+   position: fixed;
+   bottom: 0;
+   animation: popUpFooter .25s;
+   animation-fill-mode: both;
+}
+
+@keyframes popUpFooter {
+   0% {bottom: -120px}
+   100% {bottom: 0}
+}
+
+.popOutFooter {
+   position: fixed;
+   bottom: -120px;
+   animation: popOutFooter .25s;
+   animation-fill-mode: both;
+}
+
+@keyframes popOutFooter {
+   0% {bottom: 0}
+   100% {bottom: -120px}
 }
 
 footer p {
