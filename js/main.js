@@ -108,6 +108,87 @@ $(document).ready(() => {
 
    addColor();
 
+   // This function will add the classes to the arrow
+   // in order to animate it when scrolling down from the
+   // homeSection
+
+   const arrowMovement = () => {
+
+      $(window).scroll(() => {
+
+         const windowPosition = $(window).scrollTop();
+
+         let $section1Height = $('#homeSection').height();
+         let normalArrow1 = $section1Height * 0.15;
+         let flatArrow1 = $section1Height * 0.45;
+         let $section2Height = $('#aboutSection').height() * 0.95;
+         let normalArrow2 = ($('#aboutSection').height() * 0.15) + $('#homeSection').height();
+         let flatArrow2 = ($('#aboutSection').height() * 0.45) + $('#homeSection').height();
+         let $section3Height = $('#skillsSection').height() * 0.95 + $('#homeSection').height();
+         let normalArrow3 = ($('#skillsSection').height() * 0.15) + $('#homeSection').height() + $('#aboutSection').height();
+         let flatArrow3 = ($('#skillsSection').height() * 0.45) + $('#homeSection').height() + $('#aboutSection').height();
+         let $section4Height = $('#projectsSection').height() * 0.95 + $('#homeSection').height() + $('#aboutSection').height();
+         let normalArrow4 = ($('#projectsSection').height() * 0.15) + $('#homeSection').height() + $('#aboutSection').height() + $('#skillsSection').height();
+         let flatArrow4 = ($('#projectsSection').height() * 0.45) + $('#homeSection').height() + $('#aboutSection').height() + $('#skillsSection').height();
+
+         if (windowPosition < normalArrow1) {
+            $('.leftSide').removeClass('flatArrow');
+            $('.leftSide').removeClass('hiddenArrow');
+            $('.rightSide').removeClass('flatArrow');
+            $('.rightSide').removeClass('hiddenArrow');
+         } else if (windowPosition >= normalArrow1 && windowPosition <= flatArrow1) {
+            $('.leftSide').addClass('flatArrow');
+            $('.leftSide').removeClass('hiddenArrow');
+            $('.rightSide').addClass('flatArrow');
+            $('.rightSide').removeClass('hiddenArrow');
+         } else if (windowPosition > flatArrow1 && windowPosition <= $section2Height) {
+            $('.leftSide').addClass('hiddenArrow');
+            $('.rightSide').addClass('hiddenArrow');
+         } else if (windowPosition < normalArrow2) {
+            $('.leftSide').removeClass('flatArrow');
+            $('.leftSide').removeClass('hiddenArrow');
+            $('.rightSide').removeClass('flatArrow');
+            $('.rightSide').removeClass('hiddenArrow');
+         } else if (windowPosition >= normalArrow2 && windowPosition <= flatArrow2) {
+            $('.leftSide').addClass('flatArrow');
+            $('.leftSide').removeClass('hiddenArrow');
+            $('.rightSide').addClass('flatArrow');
+            $('.rightSide').removeClass('hiddenArrow');
+         } else if (windowPosition > flatArrow2 && windowPosition <= $section3Height) {
+            $('.leftSide').addClass('hiddenArrow');
+            $('.rightSide').addClass('hiddenArrow');
+         } else if (windowPosition < normalArrow3) {
+            $('.leftSide').removeClass('flatArrow');
+            $('.leftSide').removeClass('hiddenArrow');
+            $('.rightSide').removeClass('flatArrow');
+            $('.rightSide').removeClass('hiddenArrow');
+         } else if (windowPosition >= normalArrow3 && windowPosition <= flatArrow3) {
+            $('.leftSide').addClass('flatArrow');
+            $('.leftSide').removeClass('hiddenArrow');
+            $('.rightSide').addClass('flatArrow');
+            $('.rightSide').removeClass('hiddenArrow');
+         } else if (windowPosition > flatArrow3 && windowPosition <= $section4Height) {
+            $('.leftSide').addClass('hiddenArrow');
+            $('.rightSide').addClass('hiddenArrow');
+         } else if (windowPosition < normalArrow4) {
+            $('.leftSide').removeClass('flatArrow');
+            $('.leftSide').removeClass('hiddenArrow');
+            $('.rightSide').removeClass('flatArrow');
+            $('.rightSide').removeClass('hiddenArrow');
+         } else if (windowPosition >= normalArrow4 && windowPosition <= flatArrow4) {
+            $('.leftSide').addClass('flatArrow');
+            $('.leftSide').removeClass('hiddenArrow');
+            $('.rightSide').addClass('flatArrow');
+            $('.rightSide').removeClass('hiddenArrow');
+         } else if (windowPosition > flatArrow4) {
+            $('.leftSide').addClass('hiddenArrow');
+            $('.rightSide').addClass('hiddenArrow');
+         }
+      });
+   };
+
+   arrowMovement();
+
    // This function toggles the classes of the menu bars to
    // animate the opening and closing navigation menu
 
@@ -173,30 +254,6 @@ $(document).ready(() => {
             $('#webMenu').removeClass('allScreenMenu');
             $('.navMenu').removeClass('navVisible');
          }, 350);
-      }
-   });
-
-   // This function will add the classes to the arrow
-   // in order to animate it when scrolling down from the
-   // homeSection
-
-   $(window).scroll(() => {
-
-      const windowPosition = $(window).scrollTop();
-
-      if (windowPosition < 125) {
-         $('.leftSide').removeClass('flatArrow');
-         $('.leftSide').removeClass('hiddenArrow');
-         $('.rightSide').removeClass('flatArrow');
-         $('.rightSide').removeClass('hiddenArrow');
-      } else if (windowPosition >=125 && windowPosition <= 425) {
-         $('.leftSide').addClass('flatArrow');
-         $('.leftSide').removeClass('hiddenArrow');
-         $('.rightSide').addClass('flatArrow');
-         $('.rightSide').removeClass('hiddenArrow');
-      } else if (windowPosition > 425) {
-         $('.leftSide').addClass('hiddenArrow');
-         $('.rightSide').addClass('hiddenArrow');
       }
    });
 

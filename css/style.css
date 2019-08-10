@@ -30,7 +30,7 @@ has all the links within the website */
 header {
    position: fixed;
    width: 100%;
-   background-color: hsla(0, 0%, 15%, 0.95);
+   background-color: hsla(0, 0%, 20%, 0.95);
    color: hsla(360, 0%, 100%, 1);
    display: grid;
    grid-template-columns: 1fr 10fr 1fr;
@@ -94,7 +94,7 @@ nav ul li {
 }
 
 .barColor2 {
-   border-bottom: 2px solid hsla(80, 60%, 60%, 1);
+   border-bottom: 2px solid hsla(50, 90%, 60%, 1);
 }
 
 .barColor3 {
@@ -117,7 +117,7 @@ nav ul li {
 
    header.allScreenMenu {
       height: 100vh;
-      background-color: hsla(0, 0%, 15%, 1);
+      background-color: hsla(0, 0%, 20%, 1);
       grid-auto-rows: 110px;
    }
 
@@ -125,7 +125,7 @@ nav ul li {
       display: grid;
       width: 100%;
       height: 120px;
-      background-color: hsla(0, 0%, 15%, .95);
+      background-color: hsla(0, 0%, 20%, .95);
       visibility: visible;
       z-index: 20;
       grid-template-columns: 1fr 10fr 1fr;
@@ -274,28 +274,29 @@ nav ul li {
    }
 
    .barColor1 {
-      border-bottom: 5px solid hsla(220, 70%, 70%, 1);
+      border-width: 5px;
    }
 
    .barColor2 {
-      border-bottom: 5px solid hsla(80, 60%, 60%, 1);
+      border-width: 5px;
    }
 
    .barColor3 {
-      border-bottom: 5px solid hsla(270, 50%, 50%, 1);
+      border-width: 5px;
    }
 
    .barColor4 {
-      border-bottom: 5px solid hsla(150, 50%, 60%, 1);
+      border-width: 5px;
    }
 
    .barColor5 {
-      border-bottom: 5px solid hsla(0, 75%, 60%, 1);
+      border-width: 5px;
    }
 
    .removeColor {
-      border-bottom: 0px solid hsla(0, 0%, 100%, 1);
+      border-width: 0px;
    }
+
 }
 
 /* This section is the style which will be used on
@@ -434,26 +435,34 @@ a.arrow {
 the "aboutSection" */
 
 section#aboutSection {
-   background-color: hsla(80, 60%, 60%, 1);
+   background-color: hsla(50, 0%, 100%, 1);
    color: hsla(360, 100%, 100%, 1);
    width: 100%;
-   height: calc(100vh + 50px);
+   height: 100vh;
    display: grid;
-   grid-template: repeat(2, 0.5fr) 3fr 1fr / 2fr 8fr 2fr;
+   grid-template: repeat(2, 0.5fr) 3fr repeat(2, 0.5fr) / 1fr 10fr 1fr;
    align-items: center;
+}
+
+.arrow2 {
+   background-color: hsla(50, 90%, 60%, 1);
 }
 
 /* This section is the style which will be used on
 the "skillsSection" */
 
 section#skillsSection {
-   background-color: hsla(0, 0%, 100%, 1);
-   color: hsla(360, 100%, 100%, 1);
+   background-color: hsla(270, 0%, 100%, 1);
+   color: hsla(0, 0%, 100%, 1);
    width: 100%;
-   height: calc(100vh + 50px);
+   height: 100vh;
    display: grid;
-   grid-template: repeat(2, 0.5fr) 3fr 1fr / 2fr 8fr 2fr;
+   grid-template: repeat(2, 0.5fr) 3fr repeat(2, 0.5fr) / 1fr 10fr 1fr;
    align-items: center;
+}
+
+.arrow3 {
+   background-color: hsla(270, 50%, 50%, 1);
 }
 
 .fab, .fas, .far {
@@ -465,13 +474,17 @@ section#skillsSection {
 the "projectsSection" */
 
 section#projectsSection {
-   background-color: hsla(150, 50%, 60%, 1);
+   background-color: hsla(150, 0%, 100%, 1);
    color: hsla(360, 100%, 100%, 1);
    width: 100%;
    height: 100vh;
    display: grid;
-   grid-template: repeat(2, 0.5fr) 3fr 1fr / 2fr 8fr 2fr;
+   grid-template: repeat(2, 0.5fr) 3fr repeat(2, 0.5fr) / 1fr 10fr 1fr;
    align-items: center;
+}
+
+.arrow4 {
+   background-color: hsla(150, 50%, 60%, 1);
 }
 
 section#contactSection {
@@ -480,7 +493,7 @@ section#contactSection {
    width: 100%;
    height: 100vh;
    display: grid;
-   grid-template: repeat(2, 0.5fr) 3fr 1fr / 2fr 8fr 2fr;
+   grid-template: repeat(2, 0.5fr) 3fr repeat(2, 0.5fr) / 1fr 10fr 1fr;
    align-items: center;
 }
 
