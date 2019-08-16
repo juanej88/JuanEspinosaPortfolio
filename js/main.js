@@ -56,6 +56,15 @@ changingGreeting();
 
 $(document).ready(() => {
 
+   // This function animates the function light/dark mode
+
+   $('.lightAndDarkMode').on('click', () => {
+      $('.sunCircle').toggleClass('smallerCircle');
+      $('.darkCircle').toggleClass('transparentCircle');
+      $('.sunBeams').toggleClass('smallerSunBeams');
+      $('.crescentMoon').toggleClass('biggerMoon');
+   });
+
    // This function makes a smooth transition when clicking
    // a link a getting to the new section
 

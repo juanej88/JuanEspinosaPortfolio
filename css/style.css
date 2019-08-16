@@ -33,7 +33,7 @@ header {
    background-color: hsla(0, 0%, 20%, 0.95);
    color: hsla(360, 0%, 100%, 1);
    display: grid;
-   grid-template-columns: 1fr 10fr 1fr;
+   grid-template-columns: 1fr 9fr repeat(2, .5fr) 1fr;
    align-items: center;
    z-index: 10;
 }
@@ -81,7 +81,7 @@ nav ul {
 }
 
 nav ul li {
-   padding: .5rem 0 .5rem 2rem;
+   padding: .5rem 2rem .5rem 0;
    margin: .5rem 0;
 }
 
@@ -113,6 +113,167 @@ nav ul li {
    border-bottom: 0px solid hsla(0, 0%, 100%, 1);
 }
 
+.horizontalLine {
+   height: 1.5rem;
+   width: 1px;
+   background-color: hsla(0, 0%, 100%, 0.7);
+   grid-column: 3;
+   justify-self: center;
+}
+
+/* This section is the light and dark mode icon with its
+elements and animations */
+
+.lightAndDarkMode {
+   position: relative;
+   width: 28px;
+   height: 28px;
+   grid-column: 4;
+   justify-self: end;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+}
+
+.sunCircle {
+   position: absolute;
+   width: 16px;
+   height: 16px;
+   box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 100%, 1);
+   border-radius: 50%;
+   bottom: 6px;
+   z-index: -10;
+   animation: sunCircle .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes sunCircle {
+   0% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 0);}
+   49% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 0);}
+   50% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1);}
+   100% {box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 100%, 1);}
+}
+
+.smallerCircle {
+   animation: smallerCircle .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes smallerCircle {
+   0% {box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 100%, 1);}
+   50% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1);}
+   51% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 0);}
+   100% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 0);}
+}
+
+.darkCircle {
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   background-color: hsla(0, 0%, 20%, 1);
+   border-radius: 50%;
+   z-index: -15;
+   animation: darkCircle .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes darkCircle {
+   0% {opacity: 0;}
+   50% {opacity: 0;}
+   51% {opacity: 1;}
+   100% {opacity: 1;}
+}
+
+.transparentCircle {
+   animation: transparentCircle .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes transparentCircle {
+   0% {opacity: 1;}
+   50% {opacity: 1;}
+   51% {opacity:0;}
+   100% {opacity: 0;}
+}
+
+.sunBeams {
+   position: absolute;
+   width: 26px;
+   height: 2px;
+   background-color: hsla(0, 0%, 100%, 1);
+   border-radius: 45%;
+   z-index: -20;
+   transform-origin: center;
+   animation: sunBeams .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes sunBeams {
+   0% {width: 18px; visibility: hidden;}
+   49% {width: 18px; visibility: hidden;}
+   50% {width: 18px; visibility: visible;}
+   100% {width: 26px; visibility: visible;}
+}
+
+.smallerSunBeams {
+   animation: smallerSunBeams .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes smallerSunBeams {
+   0% {width: 26px; visibility: visible;}
+   50% {width: 18px; visibility: visible;}
+   51% {width: 18px; visibility: hidden;}
+   100% {width: 18px; visibility: hidden;}
+}
+
+.sunBeam1 {
+   transform: rotate(22.5deg);
+}
+
+.sunBeam2 {
+   transform: rotate(67.5deg);
+}
+
+.sunBeam3 {
+   transform: rotate(112.5deg);
+}
+
+.sunBeam4 {
+   transform: rotate(157.5deg);
+}
+
+.crescentMoon {
+   position: relative;
+   width: 16px;
+   height: 16px;
+   box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1);
+   border-radius: 50%;
+   z-index: 0;
+   animation: crescentMoon .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes crescentMoon {
+   0% {transform: rotate(-60deg) scale(1.5);}
+   50% {transform: rotate(-60deg) scale(1.5);}
+   100% {transform: rotate(0) scale(1);}
+}
+
+.biggerMoon {
+   animation: biggerMoon .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes biggerMoon {
+   0% {transform: rotate(0) scale(1);}
+   50% {transform: rotate(0deg) scale(1);}
+   100% {transform: rotate(-60deg) scale(1.5);}
+}
+
+
+
 @media only screen and (orientation:portrait) {
 
    header.allScreenMenu {
@@ -128,7 +289,7 @@ nav ul li {
       background-color: hsla(0, 0%, 20%, .95);
       visibility: visible;
       z-index: 20;
-      grid-template-columns: 1fr 10fr 1fr;
+      grid-template-columns: 1fr 3fr 4fr 3fr 1fr;
    }
 
    .bottomLine {
@@ -584,7 +745,7 @@ is located at the bottom of the website */
 
 footer {
    width: 100%;
-   background-color: hsla(360, 0%, 95%, 1);
+   background-color: hsla(360, 0%, 90%, 1);
    display: grid;
    grid-template-columns: 1fr 10fr 1fr;
 
@@ -617,10 +778,10 @@ footer {
 footer p {
    font-weight: 400;
    font-size: .75rem;
-   color: hsla(0, 0%, 45%, 1);
+   color: hsla(0, 0%, 60%, 1);
    margin: 1rem 0;
    padding-top: .75rem;
-   border-top: 1px solid hsla(0, 0%, 45%, 1);
+   border-top: 1px solid hsla(0, 0%, 60%, 1);
 }
 
 .copyright {
