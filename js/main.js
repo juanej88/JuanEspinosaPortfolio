@@ -59,10 +59,8 @@ $(document).ready(() => {
    // This function animates the function light/dark mode
 
    $('.lightAndDarkMode').on('click', () => {
-      $('.sunCircle').toggleClass('smallerCircle');
-      $('.darkCircle').toggleClass('transparentCircle');
-      $('.sunBeams').toggleClass('smallerSunBeams');
-      $('.crescentMoon').toggleClass('biggerMoon');
+      $('.sun').toggleClass('moon');
+      $('.sunBeams').toggleClass('transparentSunBeams');
    });
 
    // This function makes a smooth transition when clicking

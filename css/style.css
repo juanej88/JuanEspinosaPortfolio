@@ -136,7 +136,7 @@ elements and animations */
    cursor: pointer;
 }
 
-.sunCircle {
+.sun {
    position: absolute;
    width: 16px;
    height: 16px;
@@ -144,64 +144,32 @@ elements and animations */
    border-radius: 50%;
    bottom: 6px;
    z-index: -10;
-   animation: sunCircle .25s linear;
+   animation: sun .25s linear;
    animation-fill-mode: forwards;
 }
 
-@keyframes sunCircle {
-   0% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 0);}
-   49% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 0);}
-   50% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1);}
-   100% {box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 100%, 1);}
+@keyframes sun {
+   0% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1); transform: rotate(60deg) scale(1.1);}
+   50% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1); transform: rotate(0deg) scale(1);}
+   100% {box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 100%, 1); transform: rotate(0deg) scale(1);}
 }
 
-.smallerCircle {
-   animation: smallerCircle .25s linear;
+.moon {
+   animation: moon .25s linear;
    animation-fill-mode: forwards;
 }
 
-@keyframes smallerCircle {
-   0% {box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 100%, 1);}
-   50% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1);}
-   51% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 0);}
-   100% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 0);}
-}
-
-.darkCircle {
-   position: absolute;
-   width: 20px;
-   height: 20px;
-   background-color: hsla(0, 0%, 20%, 1);
-   border-radius: 50%;
-   z-index: -15;
-   animation: darkCircle .25s linear;
-   animation-fill-mode: forwards;
-}
-
-@keyframes darkCircle {
-   0% {opacity: 0;}
-   50% {opacity: 0;}
-   51% {opacity: 1;}
-   100% {opacity: 1;}
-}
-
-.transparentCircle {
-   animation: transparentCircle .25s linear;
-   animation-fill-mode: forwards;
-}
-
-@keyframes transparentCircle {
-   0% {opacity: 1;}
-   50% {opacity: 1;}
-   51% {opacity:0;}
-   100% {opacity: 0;}
+@keyframes moon {
+   0% {box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 100%, 1); transform: rotate(0deg) scale(1);}
+   50% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1); transform: rotate(0deg) scale(1);}
+   100% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1); transform: rotate(60deg) scale(1.1);}
 }
 
 .sunBeams {
    position: absolute;
    width: 26px;
    height: 2px;
-   background-color: hsla(0, 0%, 100%, 1);
+   background: linear-gradient(90deg, hsla(0, 0%, 100%, 1) 3px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 100%, 0) 23px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 100%, 1) 3px);
    border-radius: 45%;
    z-index: -20;
    transform-origin: center;
@@ -210,22 +178,20 @@ elements and animations */
 }
 
 @keyframes sunBeams {
-   0% {width: 18px; visibility: hidden;}
-   49% {width: 18px; visibility: hidden;}
-   50% {width: 18px; visibility: visible;}
-   100% {width: 26px; visibility: visible;}
+   0% {opacity: 0}
+   50% {opacity: 0}
+   100% {opacity: 1}
 }
 
-.smallerSunBeams {
-   animation: smallerSunBeams .25s linear;
+.transparentSunBeams {
+   animation: transparentSunBeams .25s linear;
    animation-fill-mode: forwards;
 }
 
-@keyframes smallerSunBeams {
-   0% {width: 26px; visibility: visible;}
-   50% {width: 18px; visibility: visible;}
-   51% {width: 18px; visibility: hidden;}
-   100% {width: 18px; visibility: hidden;}
+@keyframes transparentSunBeams {
+   0% {opacity: 1}
+   50% {opacity: 0}
+   100% {opacity: 0}
 }
 
 .sunBeam1 {
@@ -243,36 +209,6 @@ elements and animations */
 .sunBeam4 {
    transform: rotate(157.5deg);
 }
-
-.crescentMoon {
-   position: relative;
-   width: 16px;
-   height: 16px;
-   box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1);
-   border-radius: 50%;
-   z-index: 0;
-   animation: crescentMoon .25s linear;
-   animation-fill-mode: forwards;
-}
-
-@keyframes crescentMoon {
-   0% {transform: rotate(-60deg) scale(1.5);}
-   50% {transform: rotate(-60deg) scale(1.5);}
-   100% {transform: rotate(0) scale(1);}
-}
-
-.biggerMoon {
-   animation: biggerMoon .25s linear;
-   animation-fill-mode: forwards;
-}
-
-@keyframes biggerMoon {
-   0% {transform: rotate(0) scale(1);}
-   50% {transform: rotate(0deg) scale(1);}
-   100% {transform: rotate(-60deg) scale(1.5);}
-}
-
-
 
 @media only screen and (orientation:portrait) {
 
