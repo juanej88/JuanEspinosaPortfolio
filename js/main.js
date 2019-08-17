@@ -69,6 +69,13 @@ $(document).ready(() => {
    $('.lightAndDarkMode').on('click', () => {
       $('#webMenu').toggleClass('headerDarkMode');
       $('.horizontalLine').toggleClass('horizontalLineDarkMode');
+
+      $('.about').toggleClass('aboutDarkMode');
+      $('.skills').toggleClass('skillsDarkMode');
+      $('.projects').toggleClass('projectsDarkMode');
+      $('.contact').toggleClass('contactDarkMode');
+
+      $('footer').toggleClass('footerDarkMode');
    });
 
    // This function makes a smooth transition when clicking
