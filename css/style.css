@@ -30,12 +30,33 @@ has all the links within the website */
 header {
    position: fixed;
    width: 100%;
-   background-color: hsla(0, 0%, 20%, 0.95);
-   color: hsla(360, 0%, 100%, 1);
+   background-color: hsla(0, 0%, 100%, 0.4);
+   color: hsla(0, 0%, 20%, 1);
    display: grid;
    grid-template-columns: 1fr 9fr repeat(2, .5fr) 1fr;
    align-items: center;
    z-index: 10;
+   animation: headerLightMode .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes headerLightMode {
+   0% {background-color: hsla(0, 0%, 20%, 0.95); color: hsla(0, 0%, 100%, 1);}
+   50% {background-color: hsla(0, 0%, 60%, 0.95); color: hsla(0, 0%, 60%, 1);}
+   100% {background-color: hsla(0, 0%, 100%, 0.4); color: hsla(0, 0%, 20%, 1);}
+}
+
+header.headerDarkMode {
+   background-color: hsla(0, 0%, 20%, 0.95);
+   color: hsla(0, 0%, 100%, 1);
+   animation: headerDarkMode .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes headerDarkMode {
+   0% {background-color: hsla(0, 0%, 100%, 0.4); color: hsla(0, 0%, 20%, 1);}
+   50% {background-color: hsla(0, 0%, 60%, 0.95); color: hsla(0, 0%, 60%, 1);}
+   100% {background-color: hsla(0, 0%, 20%, 0.95); color: hsla(0, 0%, 100%, 1);}
 }
 
 .solidBar {
@@ -85,12 +106,16 @@ nav ul li {
    margin: .5rem 0;
 }
 
-.navigationLinks:hover {
-   color: hsla(0, 0%, 75%, .5);
-}
+/* .navigationLinks:hover {
+   color: hsla(0, 0%, 90%, .8);
+} */
+
+/* .barColor1 {
+   border-bottom: 2px solid hsla(220, 70%, 70%, 1);
+} */
 
 .barColor1 {
-   border-bottom: 2px solid hsla(220, 70%, 70%, 1);
+   border-bottom: 2px solid hsla(0, 75%, 60%, 1);
 }
 
 .barColor2 {
@@ -116,10 +141,28 @@ nav ul li {
 .horizontalLine {
    height: 1.5rem;
    width: 1px;
-   background-color: hsla(0, 0%, 100%, 0.7);
+   background-color: hsla(0, 0%, 20%, .7);
    grid-column: 3;
    justify-self: center;
+   animation: horizontalLine .25s linear;
+   animation-fill-mode: forwards;
 }
+
+@keyframes horizontalLine {
+   0% {background-color: hsla(0, 0%, 100%, .7);}
+   100% {background-color: hsla(0, 0%, 20%, .7);}
+}
+
+.horizontalLineDarkMode {
+   background-color: hsla(0, 0%, 100%, .7);
+   animation: horizontalLineDarkMode .25s linear;
+   animation-fill-mode: forwards;
+   }
+
+   @keyframes horizontalLineDarkMode {
+   0% {background-color: hsla(0, 0%, 20%, .7);}
+   100% {background-color: hsla(0, 0%, 100%, .7);}
+   }
 
 /* This section is the light and dark mode icon with its
 elements and animations */
@@ -140,7 +183,7 @@ elements and animations */
    position: absolute;
    width: 16px;
    height: 16px;
-   box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 100%, 1);
+   box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 20%, 1);
    border-radius: 50%;
    bottom: 6px;
    z-index: -10;
@@ -150,8 +193,8 @@ elements and animations */
 
 @keyframes sun {
    0% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1); transform: rotate(60deg) scale(1.1);}
-   50% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1); transform: rotate(0deg) scale(1);}
-   100% {box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 100%, 1); transform: rotate(0deg) scale(1);}
+   50% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 60%, 1); transform: rotate(0deg) scale(1);}
+   100% {box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 20%, 1); transform: rotate(0deg) scale(1);}
 }
 
 .moon {
@@ -160,8 +203,8 @@ elements and animations */
 }
 
 @keyframes moon {
-   0% {box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 100%, 1); transform: rotate(0deg) scale(1);}
-   50% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1); transform: rotate(0deg) scale(1);}
+   0% {box-shadow: inset 0px -16px 0px 0px hsla(0, 0%, 20%, 1); transform: rotate(0deg) scale(1);}
+   50% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 60%, 1); transform: rotate(0deg) scale(1);}
    100% {box-shadow: inset 0px -5px 0px 0px hsla(0, 0%, 100%, 1); transform: rotate(60deg) scale(1.1);}
 }
 
@@ -169,7 +212,7 @@ elements and animations */
    position: absolute;
    width: 26px;
    height: 2px;
-   background: linear-gradient(90deg, hsla(0, 0%, 100%, 1) 3px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 100%, 0) 23px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 100%, 1) 3px);
+   background: linear-gradient(90deg, hsla(0, 0%, 20%, 1) 3px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 100%, 0) 23px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 20%, 1) 3px);
    border-radius: 45%;
    z-index: -20;
    transform-origin: center;
@@ -178,9 +221,9 @@ elements and animations */
 }
 
 @keyframes sunBeams {
-   0% {opacity: 0}
-   50% {opacity: 0}
-   100% {opacity: 1}
+   0% {opacity: 0; background: linear-gradient(90deg, hsla(0, 0%, 60%, 1) 3px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 100%, 0) 23px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 60%, 1) 3px);}
+   50% {opacity: 0; background: linear-gradient(90deg, hsla(0, 0%, 60%, 1) 3px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 100%, 0) 23px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 60%, 1) 3px);}
+   100% {opacity: 1; background: linear-gradient(90deg, hsla(0, 0%, 20%, 1) 3px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 100%, 0) 23px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 20%, 1) 3px);}
 }
 
 .transparentSunBeams {
@@ -189,9 +232,9 @@ elements and animations */
 }
 
 @keyframes transparentSunBeams {
-   0% {opacity: 1}
-   50% {opacity: 0}
-   100% {opacity: 0}
+   0% {opacity: 1; background: linear-gradient(90deg, hsla(0, 0%, 20%, 1) 3px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 100%, 0) 23px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 20%, 1) 3px);}
+   50% {opacity: 0; background: linear-gradient(90deg, hsla(0, 0%, 60%, 1) 3px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 100%, 0) 23px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 60%, 1) 3px);}
+   100% {opacity: 0; background: linear-gradient(90deg, hsla(0, 0%, 60%, 1) 3px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 100%, 0) 23px, hsla(0, 0%, 100%, 0) 0px, hsla(0, 0%, 60%, 1) 3px);}
 }
 
 .sunBeam1 {

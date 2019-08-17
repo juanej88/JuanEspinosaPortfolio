@@ -63,6 +63,14 @@ $(document).ready(() => {
       $('.sunBeams').toggleClass('transparentSunBeams');
    });
 
+   // This function will switch all the properties needed between light
+   // and dark mode
+
+   $('.lightAndDarkMode').on('click', () => {
+      $('#webMenu').toggleClass('headerDarkMode');
+      $('.horizontalLine').toggleClass('horizontalLineDarkMode');
+   });
+
    // This function makes a smooth transition when clicking
    // a link a getting to the new section
 
