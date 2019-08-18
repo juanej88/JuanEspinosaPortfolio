@@ -30,7 +30,7 @@ has all the links within the website */
 header {
    position: fixed;
    width: 100%;
-   background-color: hsla(0, 0%, 100%, 0.4);
+   background-color: hsla(0, 0%, 95%, 0.95);
    color: hsla(0, 0%, 20%, 1);
    display: grid;
    grid-template-columns: 1fr 9fr repeat(2, .5fr) 1fr;
@@ -43,7 +43,7 @@ header {
 @keyframes headerLightMode {
    0% {background-color: hsla(0, 0%, 20%, 0.95); color: hsla(0, 0%, 100%, 1);}
    50% {background-color: hsla(0, 0%, 60%, 0.95); color: hsla(0, 0%, 60%, 1);}
-   100% {background-color: hsla(0, 0%, 100%, 0.4); color: hsla(0, 0%, 20%, 1);}
+   100% {background-color: hsla(0, 0%, 95%, 0.95); color: hsla(0, 0%, 20%, 1);}
 }
 
 header.headerDarkMode {
@@ -54,7 +54,7 @@ header.headerDarkMode {
 }
 
 @keyframes headerDarkMode {
-   0% {background-color: hsla(0, 0%, 100%, 0.4); color: hsla(0, 0%, 20%, 1);}
+   0% {background-color: hsla(0, 0%, 950%, 0.95); color: hsla(0, 0%, 20%, 1);}
    50% {background-color: hsla(0, 0%, 60%, 0.95); color: hsla(0, 0%, 60%, 1);}
    100% {background-color: hsla(0, 0%, 20%, 0.95); color: hsla(0, 0%, 100%, 1);}
 }
@@ -112,32 +112,27 @@ nav ul li {
 
 .barColor1 {
    /* border-bottom: 2px solid hsla(220, 70%, 70%, 1); */
-   border-bottom: 2px solid hsla(0, 50%, 50%, 1);
-   border-radius: 2px;
+   border-bottom: 2px solid hsla(100, 50%, 50%, 1);
 }
 
 .barColor2 {
    /* border-bottom: 2px solid hsla(50, 90%, 60%, 1); */
-   border-bottom: 2px solid hsla(0, 50%, 50%, 1);
-   border-radius: 2px;
+   border-bottom: 2px solid hsla(100, 50%, 50%, 1);
 }
 
 .barColor3 {
    /* border-bottom: 2px solid hsla(270, 50%, 50%, 1); */
-   border-bottom: 2px solid hsla(0, 50%, 50%, 1);
-   border-radius: 2px;
+   border-bottom: 2px solid hsla(100, 50%, 50%, 1);
 }
 
 .barColor4 {
    /* border-bottom: 2px solid hsla(150, 50%, 60%, 1); */
-   border-bottom: 2px solid hsla(0, 50%, 50%, 1);
-   border-radius: 2px;
+   border-bottom: 2px solid hsla(100, 50%, 50%, 1);
 }
 
 .barColor5 {
    /* border-bottom: 2px solid hsla(0, 75%, 60%, 1); */
-   border-bottom: 2px solid hsla(0, 50%, 50%, 1);
-   border-radius: 2px;
+   border-bottom: 2px solid hsla(100, 50%, 50%, 1);
 }
 
 .removeColor {
@@ -602,20 +597,9 @@ section.about {
    100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
 }
 
-section.aboutDarkMode {
-   animation: contactDarkMode .25s linear;
-   animation-fill-mode: forwards;
-}
-
-@keyframes aboutDarkMode {
-   0% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
-   100% {background-color: hsla(0, 0%, 20%, 1); color: hsla(360, 0%, 100%, 1);}
-}
-
-
 .arrow2 {
    /* background-color: hsla(50, 90%, 60%, 1); */
-   background-color: hsla(0, 50%, 50%, 1);;
+   background-color: hsla(100, 50%, 50%, 1);;
 }
 
 /* This section is the style which is used on
@@ -638,24 +622,14 @@ section.skills {
    100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
 }
 
-section.skillsDarkMode {
-   animation: contactDarkMode .25s linear;
-   animation-fill-mode: forwards;
-}
-
-@keyframes skillsDarkMode {
-   0% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
-   100% {background-color: hsla(0, 0%, 20%, 1); color: hsla(360, 0%, 100%, 1);}
-}
-
 .arrow3 {
    /* background-color: hsla(270, 50%, 50%, 1); */
-   background-color: hsla(0, 50%, 50%, 1);
+   background-color: hsla(100, 50%, 50%, 1);
 }
 
 .fab, .fas, .far {
    font-size: 3rem;
-   color: hsla(0, 50%, 50%, 1);
+   color: hsla(100, 50%, 50%, 1);
 }
 
 /* This section is the style which is used on
@@ -678,19 +652,9 @@ section.projects {
    100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
 }
 
-section.projectsDarkMode {
-   animation: contactDarkMode .25s linear;
-   animation-fill-mode: forwards;
-}
-
-@keyframes projectsDarkMode {
-   0% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
-   100% {background-color: hsla(0, 0%, 20%, 1); color: hsla(360, 0%, 100%, 1);}
-}
-
 .arrow4 {
    /* background-color: hsla(150, 50%, 60%, 1); */
-   background-color: hsla(0, 50%, 50%, 1);
+   background-color: hsla(100, 50%, 50%, 1);
 }
 
 /* This section is the style which is used on
@@ -709,18 +673,18 @@ section.contact {
 }
 
 @keyframes contact {
-   0% {background-color: hsla(0, 0%, 20%, 1); color: hsla(0, 0%, 100%, 1);}
+   0% {background-color: hsla(0, 0%, 23%, 1); color: hsla(0, 0%, 100%, 1);}
    100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
 }
 
-section.contactDarkMode {
-   animation: contactDarkMode .25s linear;
+section.sectionDarkMode {
+   animation: sectionDarkMode .25s linear;
    animation-fill-mode: forwards;
 }
 
-@keyframes contactDarkMode {
+@keyframes sectionDarkMode {
    0% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
-   100% {background-color: hsla(0, 0%, 20%, 1); color: hsla(360, 0%, 100%, 1);}
+   100% {background-color: hsla(0, 0%, 23%, 1); color: hsla(0, 0%, 100%, 1);}
 }
 
 a.arrowUp {
@@ -738,7 +702,7 @@ a.arrowUp {
    width: 25px;
    transform: rotate(-30deg);
    border-radius: 1.5px 0 0 1.5px;
-   background-color: hsla(0, 50%, 50%, 1);
+   background-color: hsla(100, 50%, 50%, 1);
 }
 
 .leftSideTopAnimation {
@@ -761,7 +725,7 @@ a.arrowUp {
    left: 20px;
    transform: rotate(30deg);
    border-radius: 0 1.5px 1.5px 0;
-   background-color: hsla(0, 50%, 50%, 1);
+   background-color: hsla(100, 50%, 50%, 1);
 }
 
 .rightSideTopAnimation {
@@ -805,15 +769,15 @@ is located at the bottom of the website */
 
 footer {
    width: 100%;
-   background-color: hsla(0, 0%, 92%, 1);
+   background-color: hsla(0, 0%, 90%, 1);
    color: hsla(0, 0%, 60%, 1);
    display: grid;
    grid-template-columns: 1fr 10fr 1fr;
 }
 
 footer.footerDarkMode {
-   background-color: hsla(0, 0%, 20%, 1);
-   color: hsla(0, 0%, 80%, 1);
+   background-color: hsla(0, 0%, 15%, 1);
+   color: hsla(0, 0%, 60%, 1);
 }
 
 .fixedFooter {

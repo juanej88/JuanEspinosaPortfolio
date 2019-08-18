@@ -70,10 +70,10 @@ $(document).ready(() => {
       $('#webMenu').toggleClass('headerDarkMode');
       $('.horizontalLine').toggleClass('horizontalLineDarkMode');
 
-      $('.about').toggleClass('aboutDarkMode');
-      $('.skills').toggleClass('skillsDarkMode');
-      $('.projects').toggleClass('projectsDarkMode');
-      $('.contact').toggleClass('contactDarkMode');
+      $('.about').toggleClass('sectionDarkMode');
+      $('.skills').toggleClass('sectionDarkMode');
+      $('.projects').toggleClass('sectionDarkMode');
+      $('.contact').toggleClass('sectionDarkMode');
 
       $('footer').toggleClass('footerDarkMode');
    });
