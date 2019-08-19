@@ -75,6 +75,7 @@ a.logoText {
 }
 
 .menuBars {
+   visibility: hidden;
    text-align: center;
    height: 48px;
    width: 70px;
@@ -83,8 +84,26 @@ a.logoText {
 .barLines {
    height: 4px;
    width: 70px;
-   background-color: hsla(0, 0%, 100%, 1);
+   background-color: hsla(0, 0%, 20%, 1);
    border-radius: 1px;
+   animation: barLines .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes barLines {
+   0% {background-color: hsla(0, 0%, 100%, 1);}
+   100% {background-color: hsla(0, 0%, 20%, 1);}
+}
+
+.barLinesDarkMode {
+   background-color: hsla(0, 0%, 100%, 1);
+   animation: barLinesDarkMode .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes barLinesDarkMode {
+   0% {background-color: hsla(0, 0%, 20%, 1);}
+   100% {background-color: hsla(0, 0%, 100%, 1);}
 }
 
 .firstLine {
@@ -271,11 +290,11 @@ elements and animations */
       grid-template-rows: 120px;
    }
 
-   header.allScreenMenu {
+   /* header.allScreenMenu {
       height: 100vh;
-      background-color: hsla(0, 0%, 20%, 1);
+      background-color: hsla(0, 0%, 100%, 1);
       grid-auto-rows: 110px;
-   }
+   } */
 
    div#logo {
       grid-column: 3;
@@ -313,7 +332,8 @@ elements and animations */
    }
 
    .menuBars {
-      grid-column: 2 / span 1;
+      visibility: visible;
+      grid-area: 1 / 2;
       align-self: center;
    }
 

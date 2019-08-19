@@ -69,6 +69,7 @@ $(document).ready(() => {
    $('.lightAndDarkMode').on('click', () => {
       $('#webMenu').toggleClass('headerDarkMode');
       $('.horizontalLine').toggleClass('horizontalLineDarkMode');
+      $('.barLines').toggleClass('barLinesDarkMode');
 
       $('.about').toggleClass('sectionDarkMode');
       $('.skills').toggleClass('sectionDarkMode');
@@ -242,7 +243,7 @@ $(document).ready(() => {
       $('#webMenu').addClass('allScreenMenu');
       $('.navMenu').addClass('navVisible');
 
-      $('#webMenu').toggleClass('slideDown');
+      $('.navMenu').toggleClass('slideDown');
       $('#webMenu').toggleClass('slideUp');
       $('.solidBar').toggleClass('bottomLine');
 
@@ -268,7 +269,7 @@ $(document).ready(() => {
       $('.thirdLine').addClass('thirdLineClose');
 
       $('#webMenu').addClass('slideUp');
-      $('#webMenu').removeClass('slideDown');
+      $('.navMenu').removeClass('slideDown');
       $('.solidBar').removeClass('bottomLine');
 
       if ($('#webMenu').hasClass('slideUp')) {
