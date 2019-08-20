@@ -65,13 +65,12 @@ div#logo {
 }
 
 a.logoText {
-   font-family: 'Roboto', sans-serif;
-   font-size: 1.15rem;
+   font-size: 1.1rem;
 }
 
-.solidBar {
-   position: fixed;
-   visibility: hidden;
+.logoGreenText {
+   font-size: 1.1rem;
+   color: hsla(100, 50%, 50%, 1);
 }
 
 .menuBars {
@@ -290,12 +289,6 @@ elements and animations */
       grid-template-rows: 120px;
    }
 
-   /* header.allScreenMenu {
-      height: 100vh;
-      background-color: hsla(0, 0%, 100%, 1);
-      grid-auto-rows: 110px;
-   } */
-
    div#logo {
       grid-column: 3;
       justify-self: center;
@@ -303,6 +296,11 @@ elements and animations */
 
    a.logoText {
       font-size: 2rem;
+   }
+
+   .logoGreenText {
+      font-size: 2rem;
+      color: hsla(100, 50%, 50%, 1);
    }
 
    .lightAndDarkMode {
@@ -315,16 +313,6 @@ elements and animations */
       visibility: hidden;
       grid-area: 1 / 5;
    }
-
-   /* .solidBar {
-      display: grid;
-      width: 100%;
-      height: 120px;
-      background-color: hsla(0, 0%, 20%, .5);
-      visibility: visible;
-      z-index: 20;
-      grid-template-columns: 1fr 3fr 4fr 3fr 1fr;
-   } */
 
    .bottomLine {
       border-bottom: 1px solid hsla(0, 0%, 55%, 1);
@@ -342,13 +330,14 @@ elements and animations */
    }
 
    nav.navVisible {
+      height: calc(100vh - 120px);
       display: flex;
-      align-self: start;
       grid-area: 2 / 1 / span 1 / span 3;
    }
 
    nav ul {
       flex-direction: column;
+      justify-content: flex-start;
    }
 
    nav ul li {
@@ -446,7 +435,7 @@ elements and animations */
       100% {top: 33px;}
    }
 
-   .slideDown {
+   nav.slideDown {
       animation-name: slideDown;
       animation-duration: .25s;
       animation-timing-function: ease-out;
@@ -501,7 +490,7 @@ the "homeSection" */
 section#homeSection {
    background-image: url('../pictures/sydney.jpg');
    background-size: cover;
-   background-position: 0% 15%;
+   background-position: 0% 0%;
    color: hsla(0, 100%, 100%, 1);
    width: 100%;
    min-width: 300px;
@@ -518,9 +507,9 @@ div.introMessage {
 }
 
 h1.myName {
-   font-weight: 700;
+   font-weight: 600;
    font-size: 3.25rem;
-   margin: 0.25rem 0 0.75rem 0;
+   margin: 0.35rem 0 0.6rem 0;
    grid-row: 2 / span 1;
 }
 
@@ -535,6 +524,7 @@ p.message {
    font-weight: 400;
    font-size: 1.15rem;
    line-height: 2rem;
+   margin-bottom: 1rem;
 }
 
 p strong {

@@ -240,19 +240,17 @@ $(document).ready(() => {
    // menu icon
 
    $('.menuBars').on('click', () => {
-      $('#webMenu').addClass('allScreenMenu');
-      $('.navMenu').addClass('navVisible');
+      $('.navMenu').toggleClass('navVisible');
 
       $('.navMenu').toggleClass('slideDown');
-      $('#webMenu').toggleClass('slideUp');
-      $('.solidBar').toggleClass('bottomLine');
+      $('.navMenu').toggleClass('slideUp');
 
-      if ($('#webMenu').hasClass('slideUp')) {
-         setTimeout(() => {
-            $('#webMenu').removeClass('allScreenMenu');
-            $('.navMenu').removeClass('navVisible');
-         }, 350);
-      }
+
+      // if ($('.navMenu').hasClass('slideDown')) {
+      //    setTimeout(() => {
+      //       $('.navMenu').removeClass('navVisible');
+      //    }, 350);
+      // }
    });
 
    // This function does the animation to slideUp the
@@ -268,16 +266,15 @@ $(document).ready(() => {
       $('.secondLine').addClass('secondLineClose');
       $('.thirdLine').addClass('thirdLineClose');
 
-      $('#webMenu').addClass('slideUp');
+      $('.navMenu').addClass('slideUp');
       $('.navMenu').removeClass('slideDown');
-      $('.solidBar').removeClass('bottomLine');
+      $('.navMenu').removeClass('navVisible');
 
-      if ($('#webMenu').hasClass('slideUp')) {
-         setTimeout(() => {
-            $('#webMenu').removeClass('allScreenMenu');
-            $('.navMenu').removeClass('navVisible');
-         }, 350);
-      }
+      // if ($('.navMenu').hasClass('slideDown')) {
+      //    setTimeout(() => {
+      //       $('.navMenu').removeClass('navVisible');
+      //    }, 350);
+      // }
    });
 
    // This function will give a fixed position to the footer
