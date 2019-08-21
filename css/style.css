@@ -344,25 +344,31 @@ elements and animations */
 
    .whiteBlock {
       background-color: hsla(0, 0%, 95%, 1);
-      /* animation: whiteBlock .25s linear;
-      animation-fill-mode: forwards; */
    }
 
-   /* @keyframes whiteBlock {
+   .whiteBlockAnimation {
+      animation: whiteBlockAnimation .25s linear;
+      animation-fill-mode: forwards;
+   }
+
+   @keyframes whiteBlockAnimation {
       0% {background-color: hsla(0, 0%, 20%, 1);}
       100% {background-color: hsla(0, 0%, 95%, 1);}
-   } */
+   }
 
    .grayBlock {
       background-color: hsla(0, 0%, 20%, 1);
-      /* animation: grayBlock .25s linear;
-      animation-fill-mode: forwards; */
    }
 
-   /* @keyframes grayBlock {
+   .grayBlockAnimation {
+      animation: grayBlockAnimation .25s linear;
+      animation-fill-mode: forwards;
+   }
+
+   @keyframes grayBlockAnimation {
       0% {background-color: hsla(0, 0%, 95%, 1);}
       100% {background-color: hsla(0, 0%, 20%, 1);}
-   } */
+   }
 
    nav ul {
       flex-direction: column;

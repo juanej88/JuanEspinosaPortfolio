@@ -221,6 +221,14 @@ $(document).ready(() => {
          $('#barBlock').toggleClass('whiteBlock');
       }
 
+      if ($('#barBlock').hasClass('whiteBlock')) {
+         $('#barBlock').addClass('whiteBlockAnimation');
+         $('#barBlock').removeClass('grayBlockAnimation');
+      } else if ($('#barBlock').hasClass('grayBlock')) {
+         $('#barBlock').removeClass('whiteBlockAnimation');
+         $('#barBlock').addClass('grayBlockAnimation');
+      }
+
    });
 
    // This function will switch all the properties needed between light
@@ -418,6 +426,8 @@ $(document).ready(() => {
       } else {
          $('#barBlock').removeClass('whiteBlock');
          $('#barBlock').removeClass('grayBlock');
+         $('#barBlock').removeClass('whiteBlockAnimation');
+         $('#barBlock').removeClass('grayBlockAnimation');
       }
 
 
@@ -446,6 +456,8 @@ $(document).ready(() => {
 
       $('#barBlock').removeClass('whiteBlock');
       $('#barBlock').removeClass('grayBlock');
+      $('#barBlock').removeClass('whiteBlockAnimation');
+      $('#barBlock').removeClass('grayBlockAnimation');
 
       if ($('.navMenu').hasClass('slideUp')) {
          setTimeout(() => {
