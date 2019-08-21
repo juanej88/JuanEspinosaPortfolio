@@ -76,7 +76,6 @@ a.logoText {
 
 .menuBars {
    visibility: hidden;
-   text-align: center;
    height: 48px;
    width: 70px;
 }
@@ -322,7 +321,6 @@ elements and animations */
    .menuBars {
       visibility: visible;
       grid-area: 1 / 2;
-      align-self: center;
    }
 
    nav {
@@ -337,35 +335,34 @@ elements and animations */
       z-index: -10;
    }
 
-   .whiteBlock {
+   #barBlock {
       position: fixed;
       width: 100%;
       height: 120px;
-      background-color: hsla(0, 0%, 95%, 1);
       z-index: -5;
-      animation: whiteBlock .25s linear;
-      animation-fill-mode: forwards;
    }
 
-   @keyframes whiteBlock {
+   .whiteBlock {
+      background-color: hsla(0, 0%, 95%, 1);
+      /* animation: whiteBlock .25s linear;
+      animation-fill-mode: forwards; */
+   }
+
+   /* @keyframes whiteBlock {
       0% {background-color: hsla(0, 0%, 20%, 1);}
       100% {background-color: hsla(0, 0%, 95%, 1);}
-   }
+   } */
 
    .grayBlock {
-      position: fixed;
-      width: 100%;
-      height: 120px;
       background-color: hsla(0, 0%, 20%, 1);
-      z-index: -5;
-      animation: grayBlock .25s linear;
-      animation-fill-mode: forwards;
+      /* animation: grayBlock .25s linear;
+      animation-fill-mode: forwards; */
    }
 
-   @keyframes grayBlock {
+   /* @keyframes grayBlock {
       0% {background-color: hsla(0, 0%, 95%, 1);}
       100% {background-color: hsla(0, 0%, 20%, 1);}
-   }
+   } */
 
    nav ul {
       flex-direction: column;

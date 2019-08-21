@@ -150,12 +150,12 @@ $(document).ready(() => {
       let endFunction = 0;
 
       let interval = setInterval(() => {
-         if (myFinalName.length <= myNameText.length) {
+         if (myFinalName.length < myNameText.length) {
             myFinalName = myFinalName.slice(0, -1);
             myFinalName += myNameSplit[i] + verticalBar;
             $('.myName').html(myFinalName);
             i++;
-         } else if (myFinalName.length > myNameText.length && endFunction === 0) {
+         } else if (myFinalName.length >= myNameText.length && endFunction === 0) {
             $('.myName').html(myNameText);
             changingGreeting();
             endFunction++;
@@ -212,8 +212,15 @@ $(document).ready(() => {
    $('.lightAndDarkMode').on('click', () => {
       $('.sun').toggleClass('moon');
       $('.sunBeams').toggleClass('transparentSunBeams');
-      $('#barBlock').toggleClass('grayBlock');
-      $('#barBlock').toggleClass('whiteBlock');
+
+      // This toggles the barBlock classes if the menu is
+      // open in portrait mode
+
+      if (!$('.menuBars').hasClass('close')) {
+         $('#barBlock').toggleClass('grayBlock');
+         $('#barBlock').toggleClass('whiteBlock');
+      }
+
    });
 
    // This function will switch all the properties needed between light
@@ -398,6 +405,21 @@ $(document).ready(() => {
       $('.navMenu').toggleClass('slideDown');
       $('.navMenu').toggleClass('slideUp');
 
+      // This toggles the classes 'whiteBlock' and
+      // 'grayBlock' to the barBlock, depending
+      // if the website has light or dark mode
+
+      if ($('.sun').hasClass('moon') && !$('.menuBars').hasClass('close')) {
+         $('#barBlock').addClass('grayBlock');
+         $('#barBlock').removeClass('whiteBlock');
+      } else if (!$('.menuBars').hasClass('close')) {
+         $('#barBlock').addClass('whiteBlock');
+         $('#barBlock').removeClass('grayBlock');
+      } else {
+         $('#barBlock').removeClass('whiteBlock');
+         $('#barBlock').removeClass('grayBlock');
+      }
+
 
       if ($('.navMenu').hasClass('slideUp')) {
          setTimeout(() => {
@@ -421,6 +443,9 @@ $(document).ready(() => {
 
       $('.navMenu').addClass('slideUp');
       $('.navMenu').removeClass('slideDown');
+
+      $('#barBlock').removeClass('whiteBlock');
+      $('#barBlock').removeClass('grayBlock');
 
       if ($('.navMenu').hasClass('slideUp')) {
          setTimeout(() => {
