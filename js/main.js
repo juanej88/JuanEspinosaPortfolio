@@ -3,64 +3,217 @@
 // toggling the greeting message in 4 different languages,
 // depending the time that the user visits the website.
 
-const changingGreeting = () => {
-
-   const greetings = {
-      english: ['Good morning', 'Good afternoon', 'Good evening'],
-      spanish: ['Buenos días', 'Buenas tardes', 'Buenas tardes'],
-      french: ['Bonjour', 'Bonjour', 'Bonsoir'],
-      slovak: ['Dobré ráno', 'Dobrý deň', 'Dobrý večer'],
-      italian: ['Buongiorno', 'Buongiorno', 'Buonasera'],
-      russian: ['Доброе утро', 'Добрый день', 'Добрый вечер'],
-      german: ['Guten Morgen', 'Guten Tag', 'Guten Abend']
-   };
-
-   // This section will define the time when the user visits the website
-   // and then will set up the message correctly (morning, afternoon or evening)
-
-   let actualDate = new Date();
-   let actualHour = actualDate.getHours();
-
-   if (actualHour >= 17) {
-      actualHour = 2;
-   } else if (actualHour >= 12) {
-      actualHour = 1;
-   } else {
-      actualHour = 0;
-   }
-
-   // This section will change the languages every 2.25 seconds
-
-   const allLanguages = ['english', 'spanish', 'french', 'slovak', 'italian', 'russian', 'german'];
-   let language = 1;
-
-   $('#greeting').html(`${greetings[allLanguages[0]][actualHour]},`).css({opacity: '0'}).animate({opacity: '1'}, 250);
-
-   let interval = setInterval(() => {
-      if (language >= 1 && language <= 6) {
-         $('#greeting').html(`${greetings[allLanguages[language]][actualHour]},`).css({opacity: '0'}).animate({opacity: '1'}, 250);
-         language++;
-      }
-      else {
-         $('#greeting').html(`${greetings[allLanguages[0]][actualHour]},`).css({opacity: '0'}).animate({opacity: '1'}, 250);
-         language = 1;
-      }
-   }, 2250);
-
-};
-
-changingGreeting();
+// const changingGreeting = () => {
+//
+//    const greetings = {
+//       english: ['Good morning', 'Good afternoon', 'Good evening'],
+//       spanish: ['Buenos días', 'Buenas tardes', 'Buenas tardes'],
+//       french: ['Bonjour', 'Bonjour', 'Bonsoir'],
+//       slovak: ['Dobré ráno', 'Dobrý deň', 'Dobrý večer'],
+//       italian: ['Buongiorno', 'Buongiorno', 'Buonasera'],
+//       russian: ['Доброе утро', 'Добрый день', 'Добрый вечер'],
+//       german: ['Guten Morgen', 'Guten Tag', 'Guten Abend']
+//    };
+//
+//    // This section will define the time when the user visits the website
+//    // and then will set up the message correctly (morning, afternoon or evening)
+//
+//    let actualDate = new Date();
+//    let actualHour = actualDate.getHours();
+//
+//    if (actualHour >= 17) {
+//       actualHour = 2;
+//    } else if (actualHour >= 12) {
+//       actualHour = 1;
+//    } else {
+//       actualHour = 0;
+//    }
+//
+//    // This section will change the languages every 2.25 seconds
+//
+//    const allLanguages = ['english', 'spanish', 'french', 'slovak', 'italian', 'russian', 'german'];
+//    let language = 1;
+//
+//    $('#greeting').html(`${greetings[allLanguages[0]][actualHour]},`).css({opacity: '0'}).animate({opacity: '1'}, 250);
+//
+//    let interval = setInterval(() => {
+//       if (language >= 1 && language <= 6) {
+//          $('#greeting').html(`${greetings[allLanguages[language]][actualHour]},`).css({opacity: '0'}).animate({opacity: '1'}, 250);
+//          language++;
+//       }
+//       else {
+//          $('#greeting').html(`${greetings[allLanguages[0]][actualHour]},`).css({opacity: '0'}).animate({opacity: '1'}, 250);
+//          language = 1;
+//       }
+//    }, 2250);
+//
+// };
+//
+// changingGreeting();
 
 // This sections is the JavaScript which will be working
 // after the website is completely loaded.
 
 $(document).ready(() => {
 
+   const changingGreeting = () => {
+
+      const greetings = {
+         english: ['Hello', 'Hello', 'Hello'],
+         spanish: ['Hola', 'Hola', 'Hola'],
+         french: ['Salut', 'Salut', 'Salut'],
+         slovak: ['Ahoj', 'Ahoj', 'Ahoj'],
+         italian: ['Ciao', 'Ciao', 'Ciao'],
+         german: ['Hallo', 'Hallo', 'Hallo'],
+         russian: ['Привет', 'Привет', 'Привет']
+      };
+
+      // This section will define the time when the user visits the website
+      // and then will set up the message correctly (morning, afternoon or evening)
+
+      let actualDate = new Date();
+      let actualHour = actualDate.getHours();
+
+      if (actualHour >= 17) {
+         actualHour = 2;
+      } else if (actualHour >= 12) {
+         actualHour = 1;
+      } else {
+         actualHour = 0;
+      }
+
+      // This section will change the languages every 2.25 seconds
+
+      const allLanguages = ['english', 'spanish', 'french', 'slovak', 'italian', 'german', 'russian'];
+      let language = 1;
+
+      let interval = setInterval(() => {
+         if (language >= 1 && language <= 6) {
+            $('#greeting').html(`${greetings[allLanguages[language]][actualHour]},`).css({opacity: '0'}).animate({opacity: '1'}, 250);
+            language++;
+         }
+         else {
+            $('#greeting').html(`${greetings[allLanguages[0]][actualHour]},`).css({opacity: '0'}).animate({opacity: '1'}, 250);
+            language = 1;
+         }
+      }, 2250);
+
+   };
+
+   // This function types a message on the screen with an animation
+
+   // const typingMyMessage = () => {
+   //
+   //    $('.message').removeClass('verticalBarAnimation');
+   //
+   //    const myMessageText = 'A Full-Stack Web Developer with an Architectural Engineering background';
+   //    const myMessageSplit = myMessageText.split('');
+   //    let verticalBar = '|';
+   //    let myFinalMessage = '|';
+   //    let i = 0
+   //    let endFunction = 0;
+   //
+   //    let interval = setInterval(() => {
+   //       if (myFinalMessage.length <= myMessageText.length) {
+   //          myFinalMessage = myFinalMessage.slice(0, -1);
+   //          myFinalMessage += myMessageSplit[i] + verticalBar;
+   //          $('.message').html(myFinalMessage);
+   //          i++;
+   //       } else if (myFinalMessage.length > myMessageText.length && endFunction === 0) {
+   //          $('.message').html(myMessageText);
+   //          endFunction++;
+   //          changingGreeting();
+   //       }
+   //    }, 55);
+   //
+   // };
+   //
+   // const typingMyMessageReady = () => {
+   //
+   //    setTimeout(() => {
+   //       typingMyMessage();
+   //    }, 1000);
+   //
+   // };
+
+   // This function types my full name on the screen with an animation
+
+   const typingMyName = () => {
+
+      $('.myName').removeClass('verticalBarAnimation');
+
+      const myNameText = "I'm Juan Espinosa Jorrin";
+      const myNameSplit = myNameText.split('');
+      let verticalBar = '|';
+      let myFinalName = '|';
+      let i = 0
+      let endFunction = 0;
+
+      let interval = setInterval(() => {
+         if (myFinalName.length <= myNameText.length) {
+            myFinalName = myFinalName.slice(0, -1);
+            myFinalName += myNameSplit[i] + verticalBar;
+            $('.myName').html(myFinalName);
+            i++;
+         } else if (myFinalName.length > myNameText.length && endFunction === 0) {
+            $('.myName').html(myNameText);
+            changingGreeting();
+            endFunction++;
+         }
+      }, 65);
+
+   };
+
+   const typingMyNameReady = () => {
+
+      setTimeout(() => {
+         typingMyName();
+      }, 550);
+
+   };
+
+   //This function types the first greeting on the screen with an animation
+
+   const typingGreeting = () => {
+
+      $('#greeting').removeClass('verticalBarAnimation');
+
+      const myGreeting = 'Hello,';
+      const myGreetingSplit = myGreeting.split('');
+      let verticalBar = '|';
+      let myFinalGreeting = '|';
+      let i = 0
+      let endFunction = 0;
+
+      let interval = setInterval(() => {
+         if (myFinalGreeting.length <= myGreeting.length) {
+            myFinalGreeting = myFinalGreeting.slice(0, -1);
+            myFinalGreeting += myGreetingSplit[i] + verticalBar;
+            $('#greeting').html(myFinalGreeting);
+            i++;
+         } else if (myFinalGreeting.length > myGreeting.length && endFunction === 0) {
+            $('#greeting').html(myGreeting);
+            $('.myName').html('|').addClass('verticalBarAnimation');
+            typingMyNameReady();
+            endFunction++;
+         }
+      }, 75);
+
+   };
+
+   $('#greeting').addClass('verticalBarAnimation');
+
+   setTimeout(() => {
+      typingGreeting();
+   }, 1500);
+
    // This function animates the function light/dark mode
 
    $('.lightAndDarkMode').on('click', () => {
       $('.sun').toggleClass('moon');
       $('.sunBeams').toggleClass('transparentSunBeams');
+      $('#barBlock').toggleClass('grayBlock');
+      $('#barBlock').toggleClass('whiteBlock');
    });
 
    // This function will switch all the properties needed between light
@@ -240,17 +393,17 @@ $(document).ready(() => {
    // menu icon
 
    $('.menuBars').on('click', () => {
-      $('.navMenu').toggleClass('navVisible');
+      $('.navMenu').addClass('navVisible');
 
       $('.navMenu').toggleClass('slideDown');
       $('.navMenu').toggleClass('slideUp');
 
 
-      // if ($('.navMenu').hasClass('slideDown')) {
-      //    setTimeout(() => {
-      //       $('.navMenu').removeClass('navVisible');
-      //    }, 350);
-      // }
+      if ($('.navMenu').hasClass('slideUp')) {
+         setTimeout(() => {
+            $('.navMenu').removeClass('navVisible');
+         }, 300);
+      }
    });
 
    // This function does the animation to slideUp the
@@ -268,13 +421,12 @@ $(document).ready(() => {
 
       $('.navMenu').addClass('slideUp');
       $('.navMenu').removeClass('slideDown');
-      $('.navMenu').removeClass('navVisible');
 
-      // if ($('.navMenu').hasClass('slideDown')) {
-      //    setTimeout(() => {
-      //       $('.navMenu').removeClass('navVisible');
-      //    }, 350);
-      // }
+      if ($('.navMenu').hasClass('slideUp')) {
+         setTimeout(() => {
+            $('.navMenu').removeClass('navVisible');
+         }, 300);
+      }
    });
 
    // This function will give a fixed position to the footer
