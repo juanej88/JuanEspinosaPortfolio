@@ -205,29 +205,13 @@ $(document).ready(() => {
 
    setTimeout(() => {
       typingGreeting();
-   }, 1500);
+   }, 2000);
 
    // This function animates the function light/dark mode
 
    $('.lightAndDarkMode').on('click', () => {
       $('.sun').toggleClass('moon');
       $('.sunBeams').toggleClass('transparentSunBeams');
-
-      // This toggles the barBlock classes if the menu is
-      // open in portrait mode
-
-      if (!$('.menuBars').hasClass('close')) {
-         $('#barBlock').toggleClass('grayBlock');
-         $('#barBlock').toggleClass('whiteBlock');
-      }
-
-      if ($('#barBlock').hasClass('whiteBlock')) {
-         $('#barBlock').addClass('whiteBlockAnimation');
-         $('#barBlock').removeClass('grayBlockAnimation');
-      } else if ($('#barBlock').hasClass('grayBlock')) {
-         $('#barBlock').removeClass('whiteBlockAnimation');
-         $('#barBlock').addClass('grayBlockAnimation');
-      }
 
       // This adds an animation to the allScreenBlock when switching from
       // light mode and dark mode
@@ -432,29 +416,25 @@ $(document).ready(() => {
       // 'grayBlock' to the barBlock, depending
       // if the website has light or dark mode
 
-      if ($('.sun').hasClass('moon') && !$('.menuBars').hasClass('close')) {
+      if ($('.sun').hasClass('moon')) {
          $('#barBlock').addClass('grayBlock');
-         $('#barBlock').removeClass('whiteBlock');
-      } else if (!$('.menuBars').hasClass('close')) {
-         $('#barBlock').addClass('whiteBlock');
-         $('#barBlock').removeClass('grayBlock');
+         setTimeout(() => {
+            $('#barBlock').removeClass('grayBlock');
+         }, 275);
       } else {
+         $('#barBlock').addClass('whiteBlock');
          setTimeout(() => {
             $('#barBlock').removeClass('whiteBlock');
-            $('#barBlock').removeClass('grayBlock');
-            $('#barBlock').removeClass('whiteBlockAnimation');
-            $('#barBlock').removeClass('grayBlockAnimation');
-         }, 300);
+         }, 275);
       }
-
 
       if ($('.navMenu').hasClass('slideUp')) {
          $('#allScreenBlock').removeClass('allScreenLightBlockAnimation');
          $('#allScreenBlock').removeClass('allScreenDarkBlockAnimation');
-         
+
          setTimeout(() => {
             $('.navMenu').removeClass('navVisible');
-         }, 300);
+         }, 250);
       }
    });
 
@@ -477,18 +457,25 @@ $(document).ready(() => {
       $('#allScreenBlock').addClass('slideUp');
       $('#allScreenBlock').removeClass('slideDown');
 
+      if ($('.sun').hasClass('moon')) {
+         $('#barBlock').addClass('grayBlock');
+         setTimeout(() => {
+            $('#barBlock').removeClass('grayBlock');
+         }, 275);
+      } else {
+         $('#barBlock').addClass('whiteBlock');
+         setTimeout(() => {
+            $('#barBlock').removeClass('whiteBlock');
+         }, 275);
+      }
+
       if ($('.navMenu').hasClass('slideUp')) {
          $('#allScreenBlock').removeClass('allScreenLightBlockAnimation');
          $('#allScreenBlock').removeClass('allScreenDarkBlockAnimation');
 
          setTimeout(() => {
             $('.navMenu').removeClass('navVisible');
-
-            $('#barBlock').removeClass('whiteBlock');
-            $('#barBlock').removeClass('grayBlock');
-            $('#barBlock').removeClass('whiteBlockAnimation');
-            $('#barBlock').removeClass('grayBlockAnimation');
-         }, 300);
+         }, 250);
       }
    });
 
