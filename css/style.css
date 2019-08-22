@@ -64,14 +64,73 @@ div#logo {
    display: flex;
 }
 
-a.logoText {
-   font-size: 1.1rem;
+.logoIcon {
+   position: relative;
+   display: grid;
+   grid-template: 10px 7px / 15px 8px 4px;
 }
 
-.logoGreenText {
-   font-weight: 600;
-   font-size: 1.1rem;
-   color: hsla(205, 60%, 55%, 1);
+.logoLetter {
+   border-style: solid;
+}
+
+.blackLetter {
+   border-color: hsla(0, 0%, 20%, 1);
+   animation: blackLetter .25s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes blackLetter {
+   0% {border-color: hsla(0, 0%, 100%, 1);}
+   100% {border-color: hsla(0, 0%, 20%, 1);}
+}
+
+.whiteLetter {
+   border-color: hsla(0, 0%, 100%, 1);
+   animation: whiteLetter .25s linear;
+   animation-fill-mode: forwards;
+   }
+
+   @keyframes whiteLetter {
+   0% {border-color: hsla(0, 0%, 20%, 1);}
+   100% {border-color: hsla(0, 0%, 100%, 1);}
+   }
+
+.blueLetter {
+   border-color: hsla(205, 60%, 55%, 1);
+}
+
+.upperLetterJ {
+   margin-left: 2px;
+   margin-right: 3px;
+   border-top-width: 2px;
+   border-right-width: 2px;
+}
+
+.lowerLetterJ {
+   margin-right: 3px;
+   border-left-width: 2px;
+   border-bottom-width: 2px;
+   border-right-width: 2px;
+   border-bottom-left-radius: 6px;
+   border-bottom-right-radius: 6px;
+}
+
+.upperLeftLetterE {
+   border-top-width: 3px;
+   border-bottom-width: 3px;
+}
+
+.upperRightLetterE {
+   border-top-width: 3px;
+}
+
+.lowerLeftLetterE {
+   border-bottom-width: 3px;
+}
+
+.lowerRightLetterE {
+   border-bottom-width: 3px;
 }
 
 .menuBars {
@@ -301,7 +360,7 @@ elements and animations */
    }
 
    @keyframes headerDarkMode {
-      0% {background-color: hsla(0, 0%, 950%, .95); color: hsla(0, 0%, 20%, 1);}
+      0% {background-color: hsla(0, 0%, 95%, .95); color: hsla(0, 0%, 20%, 1);}
       50% {background-color: hsla(0, 0%, 60%, .95); color: hsla(0, 0%, 60%, 1);}
       100% {background-color: hsla(0, 0%, 20%, .95); color: hsla(0, 0%, 100%, 1);}
    }
@@ -311,12 +370,43 @@ elements and animations */
       justify-self: center;
    }
 
-   a.logoText {
-      font-size: 2rem;
+   a.logoIcon {
+      position: relative;
+      display: grid;
+      grid-template: 26px 18px / 38px 20px 10px;
    }
 
-   .logoGreenText {
-      font-size: 2rem;
+   .upperLetterJ {
+      margin-left: 5px;
+      margin-right: 8px;
+      border-top-width: 5px;
+      border-right-width: 5px;
+   }
+
+   .lowerLetterJ {
+      margin-right: 8px;
+      border-left-width: 5px;
+      border-bottom-width: 5px;
+      border-right-width: 5px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+   }
+
+   .upperLeftLetterE {
+      border-top-width: 7px;
+      border-bottom-width: 7px;
+   }
+
+   .upperRightLetterE {
+      border-top-width: 7px;
+   }
+
+   .lowerLeftLetterE {
+      border-bottom-width: 7px;
+   }
+
+   .lowerRightLetterE {
+      border-bottom-width: 7px;
    }
 
    .lightAndDarkMode {
