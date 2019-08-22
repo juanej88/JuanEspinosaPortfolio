@@ -229,6 +229,18 @@ $(document).ready(() => {
          $('#barBlock').addClass('grayBlockAnimation');
       }
 
+      // This adds an animation to the allScreenBlock when switching from
+      // light mode and dark mode
+
+      $('#allScreenBlock').toggleClass('allScreenDarkBlock');
+      if (!$('.menuBars').hasClass('close') && $('.sun').hasClass('moon')) {
+         $('#allScreenBlock').addClass('allScreenDarkBlockAnimation');
+         $('#allScreenBlock').removeClass('allScreenLightBlockAnimation');
+      } else if (!$('.menuBars').hasClass('close')) {
+         $('#allScreenBlock').addClass('allScreenLightBlockAnimation');
+         $('#allScreenBlock').removeClass('allScreenDarkBlockAnimation');
+      }
+
    });
 
    // This function will switch all the properties needed between light
@@ -413,6 +425,9 @@ $(document).ready(() => {
       $('.navMenu').toggleClass('slideDown');
       $('.navMenu').toggleClass('slideUp');
 
+      $('#allScreenBlock').toggleClass('slideDown');
+      $('#allScreenBlock').toggleClass('slideUp');
+
       // This toggles the classes 'whiteBlock' and
       // 'grayBlock' to the barBlock, depending
       // if the website has light or dark mode
@@ -424,14 +439,19 @@ $(document).ready(() => {
          $('#barBlock').addClass('whiteBlock');
          $('#barBlock').removeClass('grayBlock');
       } else {
-         $('#barBlock').removeClass('whiteBlock');
-         $('#barBlock').removeClass('grayBlock');
-         $('#barBlock').removeClass('whiteBlockAnimation');
-         $('#barBlock').removeClass('grayBlockAnimation');
+         setTimeout(() => {
+            $('#barBlock').removeClass('whiteBlock');
+            $('#barBlock').removeClass('grayBlock');
+            $('#barBlock').removeClass('whiteBlockAnimation');
+            $('#barBlock').removeClass('grayBlockAnimation');
+         }, 300);
       }
 
 
       if ($('.navMenu').hasClass('slideUp')) {
+         $('#allScreenBlock').removeClass('allScreenLightBlockAnimation');
+         $('#allScreenBlock').removeClass('allScreenDarkBlockAnimation');
+         
          setTimeout(() => {
             $('.navMenu').removeClass('navVisible');
          }, 300);
@@ -454,14 +474,20 @@ $(document).ready(() => {
       $('.navMenu').addClass('slideUp');
       $('.navMenu').removeClass('slideDown');
 
-      $('#barBlock').removeClass('whiteBlock');
-      $('#barBlock').removeClass('grayBlock');
-      $('#barBlock').removeClass('whiteBlockAnimation');
-      $('#barBlock').removeClass('grayBlockAnimation');
+      $('#allScreenBlock').addClass('slideUp');
+      $('#allScreenBlock').removeClass('slideDown');
 
       if ($('.navMenu').hasClass('slideUp')) {
+         $('#allScreenBlock').removeClass('allScreenLightBlockAnimation');
+         $('#allScreenBlock').removeClass('allScreenDarkBlockAnimation');
+
          setTimeout(() => {
             $('.navMenu').removeClass('navVisible');
+
+            $('#barBlock').removeClass('whiteBlock');
+            $('#barBlock').removeClass('grayBlock');
+            $('#barBlock').removeClass('whiteBlockAnimation');
+            $('#barBlock').removeClass('grayBlockAnimation');
          }, 300);
       }
    });

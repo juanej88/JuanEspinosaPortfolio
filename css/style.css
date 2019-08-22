@@ -287,6 +287,23 @@ elements and animations */
    header {
       grid-template-columns: 1fr 3fr 4fr 3fr 1fr;
       grid-template-rows: 120px;
+      background-color: hsla(0, 0%, 95%, .95);
+   }
+
+   @keyframes headerLightMode {
+      0% {background-color: hsla(0, 0%, 20%, .95); color: hsla(0, 0%, 100%, 1);}
+      50% {background-color: hsla(0, 0%, 60%, .95); color: hsla(0, 0%, 60%, 1);}
+      100% {background-color: hsla(0, 0%, 95%, .95); color: hsla(0, 0%, 20%, 1);}
+   }
+
+   header.headerDarkMode {
+      background-color: hsla(0, 0%, 20%, .95);
+   }
+
+   @keyframes headerDarkMode {
+      0% {background-color: hsla(0, 0%, 950%, .95); color: hsla(0, 0%, 20%, 1);}
+      50% {background-color: hsla(0, 0%, 60%, .95); color: hsla(0, 0%, 60%, 1);}
+      100% {background-color: hsla(0, 0%, 20%, .95); color: hsla(0, 0%, 100%, 1);}
    }
 
    div#logo {
@@ -303,6 +320,8 @@ elements and animations */
    }
 
    .lightAndDarkMode {
+      -webkit-transform: scale(2.5);
+      -moz-transform: scale(2.5);
       transform: scale(2.5);
       right: 20px;
       grid-area: 1 / 4;
@@ -328,6 +347,7 @@ elements and animations */
    }
 
    nav.navVisible {
+      width: 100%;
       height: calc(100vh - 120px);
       display: flex;
       grid-area: 2 / 1 / span 1 / span 5;
@@ -368,6 +388,68 @@ elements and animations */
    @keyframes grayBlockAnimation {
       0% {background-color: hsla(0, 0%, 95%, 1);}
       100% {background-color: hsla(0, 0%, 20%, 1);}
+   }
+
+   .allScreenBlock {
+      position: fixed;
+      top: -2150px;
+      width: 100%;
+      height: 100vh;
+      background-color: hsla(0, 0%, 95%, .96);
+      z-index: -15;
+   }
+
+   .allScreenDarkBlock {
+      position: fixed;
+      top: -2150px;
+      width: 100%;
+      height: 100vh;
+      background-color: hsla(0, 0%, 20%, .96);
+      z-index: -15;
+   }
+
+   .slideDown {
+      position: absolute;
+      animation: slideDown .25s ease-out;
+      animation-fill-mode: forwards;
+   }
+
+   @keyframes slideDown {
+      0% {top:-2150px; opacity: .2;}
+      100% {top: 0px; opacity: 1;}
+   }
+
+   .slideUp {
+      position: absolute;
+      animation: slideUp .25s ease-in;
+      animation-fill-mode: forwards;
+   }
+
+   @keyframes slideUp {
+      0% {top:0px;}
+      100% {top:-2150px;}
+   }
+
+   .allScreenLightBlockAnimation {
+      top: 0px;
+      animation: allScreenLightBlockAnimation .25s linear;
+      animation-fill-mode: forwards;
+   }
+
+   @keyframes allScreenLightBlockAnimation {
+      0% {background-color: hsla(0, 0%, 20%, .96);}
+      100% {background-color: hsla(0, 0%, 95%, .96);}
+   }
+
+   .allScreenDarkBlockAnimation {
+      top: 0px;
+      animation: allScreenDarkBlockAnimation .25s linear;
+      animation-fill-mode: forwards;
+   }
+
+   @keyframes allScreenDarkBlockAnimation {
+      0% {background-color: hsla(0, 0%, 95%, .96);}
+      100% {background-color: hsla(0, 0%, 20%, .96);}
    }
 
    nav ul {
@@ -468,31 +550,6 @@ elements and animations */
       0% {top: 14px; transform: rotate(-45deg);}
       50% {top: 14px; transform: rotate(0deg);}
       100% {top: 33px;}
-   }
-
-   .slideDown {
-      position: relative;
-      animation-name: slideDown;
-      animation-duration: .25s;
-      animation-timing-function: ease-out;
-   }
-
-   @keyframes slideDown {
-      0% {top:-2000px; opacity: .2;}
-      100% {top: 0px; opacity: 1;}
-   }
-
-   nav.slideUp {
-      position: relative;
-      animation-name: slideUp;
-      animation-duration: .25s;
-      animation-timing-function: ease-in;
-      animation-fill-mode: forwards;
-   }
-
-   @keyframes slideUp {
-      0% {top:0px;}
-      100% {top:-2000px;}
    }
 
    .barColor1 {
