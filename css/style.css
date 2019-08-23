@@ -67,7 +67,7 @@ div#logo {
 .logoIcon {
    position: relative;
    display: grid;
-   grid-template: 10px 7px / 15px 8px 4px;
+   grid-template: 9px 7px / 15px 8px 4px;
 }
 
 .logoLetter {
@@ -96,14 +96,10 @@ div#logo {
    100% {border-color: hsla(0, 0%, 100%, 1);}
    }
 
-.blueLetter {
-   border-color: hsla(205, 60%, 55%, 1);
-}
-
 .upperLetterJ {
-   margin-left: 2px;
+   /* margin-left: 2px; */
    margin-right: 3px;
-   border-top-width: 2px;
+   /* border-top-width: 2px; */
    border-right-width: 2px;
 }
 
@@ -117,31 +113,31 @@ div#logo {
 }
 
 .upperLeftLetterE {
-   border-top-width: 3px;
-   border-bottom-width: 3px;
+   border-top-width: 2px;
+   border-bottom-width: 2px;
 }
 
 .upperRightLetterE {
-   border-top-width: 3px;
+   border-top-width: 2px;
 }
 
 .lowerLeftLetterE {
-   border-bottom-width: 3px;
+   border-bottom-width: 2px;
 }
 
 .lowerRightLetterE {
-   border-bottom-width: 3px;
+   border-bottom-width: 2px;
 }
 
 .menuBars {
    visibility: hidden;
    height: 48px;
-   width: 70px;
+   width: 65px;
 }
 
 .barLines {
-   height: 4px;
-   width: 70px;
+   height: 5px;
+   width: 65px;
    background-color: hsla(0, 0%, 20%, 1);
    border-radius: 1px;
    animation: barLines .25s linear;
@@ -171,6 +167,7 @@ div#logo {
 
 .secondLine {
    position: relative;
+   height: 3px;
    top: 18px;
 }
 
@@ -373,13 +370,13 @@ elements and animations */
    a.logoIcon {
       position: relative;
       display: grid;
-      grid-template: 26px 18px / 38px 20px 10px;
+      grid-template: 24px 18px / 38px 20px 10px;
    }
 
    .upperLetterJ {
-      margin-left: 5px;
+      /* margin-left: 5px; */
       margin-right: 8px;
-      border-top-width: 5px;
+      /* border-top-width: 5px; */
       border-right-width: 5px;
    }
 
@@ -393,20 +390,20 @@ elements and animations */
    }
 
    .upperLeftLetterE {
-      border-top-width: 7px;
-      border-bottom-width: 7px;
+      border-top-width: 5px;
+      border-bottom-width: 5px;
    }
 
    .upperRightLetterE {
-      border-top-width: 7px;
+      border-top-width: 5px;
    }
 
    .lowerLeftLetterE {
-      border-bottom-width: 7px;
+      border-bottom-width: 5px;
    }
 
    .lowerRightLetterE {
-      border-bottom-width: 7px;
+      border-bottom-width: 5px;
    }
 
    .lightAndDarkMode {

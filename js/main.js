@@ -234,8 +234,8 @@ $(document).ready(() => {
       $('#webMenu').toggleClass('headerDarkMode');
       $('.horizontalLine').toggleClass('horizontalLineDarkMode');
       $('.barLines').toggleClass('barLinesDarkMode');
-      $('.logoLetterJ').toggleClass('blackLetter');
-      $('.logoLetterJ').toggleClass('whiteLetter');
+      $('.logoLetter').toggleClass('blackLetter');
+      $('.logoLetter').toggleClass('whiteLetter');
 
       $('.about').toggleClass('sectionDarkMode');
       $('.skills').toggleClass('sectionDarkMode');
