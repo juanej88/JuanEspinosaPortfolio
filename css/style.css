@@ -91,10 +91,10 @@ div#logo {
    animation-fill-mode: forwards;
    }
 
-   @keyframes whiteLetter {
+@keyframes whiteLetter {
    0% {border-color: hsla(0, 0%, 20%, 1);}
    100% {border-color: hsla(0, 0%, 100%, 1);}
-   }
+}
 
 .upperLetterJ {
    /* margin-left: 2px; */
@@ -190,9 +190,9 @@ nav ul li {
    margin: .5rem 0;
 }
 
-/* .navigationLinks:hover {
-   color: hsla(0, 0%, 90%, .8);
-} */
+.navigationLinks:hover {
+   color: hsla(0, 0%, 50%, 1);
+}
 
 .barColor1 {
    /* border-bottom: 2px solid hsla(220, 70%, 70%, 1); */
@@ -722,9 +722,7 @@ a.arrow {
    transform: rotate(30deg);
    border-radius: 1.5px 0 0 1.5px;
    background-color: hsla(0, 0%, 100%, 1);
-   animation-name: leftSide;
-   animation-duration: .25s;
-   animation-timing-function: linear;
+   animation: leftSide .25s linear;
    animation-fill-mode: both;
 }
 
@@ -741,15 +739,25 @@ a.arrow {
    transform: rotate(-30deg);
    border-radius: 0 1.5px 1.5px 0;
    background-color: hsla(0, 0%, 100%, 1);
-   animation-name: rightSide;
-   animation-duration: .25s;
-   animation-timing-function: linear;
+   animation: rightSide .25s linear;
    animation-fill-mode: both;
 }
 
 @keyframes rightSide {
    0% {transform: rotate(0deg);}
    100% {transform: rotate(-30deg);}
+}
+
+.blackArrow {
+   background-color: hsla(0, 0%, 20%, 1);
+}
+
+.whiteArrow {
+   background-color: hsla(0, 0%, 100%, 1);
+}
+
+div.blueArrow {
+   background-color: hsla(205, 60%, 55%, 1);
 }
 
 .flatArrow {
@@ -816,11 +824,6 @@ section.about {
    100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
 }
 
-.arrow2 {
-   /* background-color: hsla(50, 90%, 60%, 1); */
-   background-color: hsla(205, 60%, 55%, 1);;
-}
-
 /* This section is the style which is used on
 the "skillsSection" */
 
@@ -839,11 +842,6 @@ section.skills {
 @keyframes skills {
    0% {background-color: hsla(0, 0%, 20%, 1); color: hsla(0, 0%, 100%, 1);}
    100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
-}
-
-.arrow3 {
-   /* background-color: hsla(270, 50%, 50%, 1); */
-   background-color: hsla(205, 60%, 55%, 1);
 }
 
 .fab, .fas, .far {
@@ -869,11 +867,6 @@ section.projects {
 @keyframes projects {
    0% {background-color: hsla(0, 0%, 20%, 1); color: hsla(0, 0%, 100%, 1);}
    100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
-}
-
-.arrow4 {
-   /* background-color: hsla(150, 50%, 60%, 1); */
-   background-color: hsla(205, 60%, 55%, 1);
 }
 
 /* This section is the style which is used on
@@ -921,7 +914,6 @@ a.arrowUp {
    width: 25px;
    transform: rotate(-30deg);
    border-radius: 1.5px 0 0 1.5px;
-   background-color: hsla(205, 60%, 55%, 1);
 }
 
 .leftSideTopAnimation {
@@ -944,7 +936,6 @@ a.arrowUp {
    left: 20px;
    transform: rotate(30deg);
    border-radius: 0 1.5px 1.5px 0;
-   background-color: hsla(205, 60%, 55%, 1);
 }
 
 .rightSideTopAnimation {

@@ -242,6 +242,8 @@ $(document).ready(() => {
       $('.projects').toggleClass('sectionDarkMode');
       $('.contact').toggleClass('sectionDarkMode');
 
+      $('.bothSides').toggleClass('whiteArrow');
+
       $('footer').toggleClass('footerDarkMode');
    });
 
@@ -480,6 +482,19 @@ $(document).ready(() => {
          }, 250);
       }
    });
+
+   // Change the color to blue when hovers the logo or the light/dark mode
+
+   const blueArrowHover = () => {
+      $('.fourArrows').on('mouseover', () => {
+         $('.bothSides').addClass('blueArrow');
+      });
+      $('.fourArrows').on('mouseleave', () => {
+         $('.bothSides').removeClass('blueArrow');
+      });
+   };
+
+   blueArrowHover();
 
    // This function will give a fixed position to the footer
    // and add an animation to the arrowUp in section 5
