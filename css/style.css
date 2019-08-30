@@ -68,6 +68,7 @@ div#logo {
    position: relative;
    display: grid;
    grid-template: 9px 7px / 15px 8px 4px;
+   grid-gap: 0;
 }
 
 .logoLetter {

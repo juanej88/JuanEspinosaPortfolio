@@ -142,7 +142,7 @@ $(document).ready(() => {
 
       $('.myName').removeClass('verticalBarAnimation');
 
-      const myNameText = "I'm Juan Espinosa Jorrin";
+      const myNameText = "I'm Juan Espinosa";
       const myNameSplit = myNameText.split('');
       let verticalBar = '|';
       let myFinalName = '|';
