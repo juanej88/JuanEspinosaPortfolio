@@ -816,13 +816,6 @@ section.about {
    display: grid;
    grid-template: repeat(2, 0.5fr) 3fr repeat(2, 0.5fr) / 1fr 10fr 1fr;
    align-items: center;
-   animation: about .25s linear;
-   animation-fill-mode: forwards;
-}
-
-@keyframes about {
-   0% {background-color: hsla(0, 0%, 20%, 1); color: hsla(0, 0%, 100%, 1);}
-   100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
 }
 
 /* This section is the style which is used on
@@ -836,13 +829,6 @@ section.skills {
    display: grid;
    grid-template: repeat(2, 0.5fr) 3fr repeat(2, 0.5fr) / 1fr 10fr 1fr;
    align-items: center;
-   animation: skills .25s linear;
-   animation-fill-mode: forwards;
-}
-
-@keyframes skills {
-   0% {background-color: hsla(0, 0%, 20%, 1); color: hsla(0, 0%, 100%, 1);}
-   100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
 }
 
 .fab, .fas, .far {
@@ -861,13 +847,6 @@ section.projects {
    display: grid;
    grid-template: repeat(2, 0.5fr) 3fr repeat(2, 0.5fr) / 1fr 10fr 1fr;
    align-items: center;
-   animation: projects .25s linear;
-   animation-fill-mode: forwards;
-}
-
-@keyframes projects {
-   0% {background-color: hsla(0, 0%, 20%, 1); color: hsla(0, 0%, 100%, 1);}
-   100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
 }
 
 /* This section is the style which is used on
@@ -881,12 +860,15 @@ section.contact {
    display: grid;
    grid-template: repeat(2, 0.5fr) 3fr repeat(2, 0.5fr) / 1fr 10fr 1fr;
    align-items: center;
-   animation: contact .25s linear;
+}
+
+section.sectionLightMode {
+   animation: sectionLightMode .25s linear;
    animation-fill-mode: forwards;
 }
 
-@keyframes contact {
-   0% {background-color: hsla(0, 0%, 23%, 1); color: hsla(0, 0%, 100%, 1);}
+@keyframes sectionLightMode {
+   0% {background-color: hsla(0, 0%, 12%, 1); color: hsla(0, 0%, 100%, 1);}
    100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
 }
 
@@ -897,7 +879,7 @@ section.sectionDarkMode {
 
 @keyframes sectionDarkMode {
    0% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
-   100% {background-color: hsla(0, 0%, 23%, 1); color: hsla(0, 0%, 100%, 1);}
+   100% {background-color: hsla(0, 0%, 12%, 1); color: hsla(0, 0%, 100%, 1);}
 }
 
 a.arrowUp {

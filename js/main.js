@@ -237,10 +237,8 @@ $(document).ready(() => {
       $('.logoLetter').toggleClass('blackLetter');
       $('.logoLetter').toggleClass('whiteLetter');
 
-      $('.about').toggleClass('sectionDarkMode');
-      $('.skills').toggleClass('sectionDarkMode');
-      $('.projects').toggleClass('sectionDarkMode');
-      $('.contact').toggleClass('sectionDarkMode');
+      $('.section').toggleClass('sectionLightMode');
+      $('.section').toggleClass('sectionDarkMode');
 
       $('.bothSides').toggleClass('whiteArrow');
 
