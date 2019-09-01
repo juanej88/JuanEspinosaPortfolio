@@ -67,7 +67,7 @@ div#logo {
 .logoIcon {
    position: relative;
    display: grid;
-   grid-template: 9px 7px / 15px 8px 4px;
+   grid-template: 9px 7px / 16px 8px 4px;
    grid-gap: 0;
 }
 
@@ -98,47 +98,45 @@ div#logo {
 }
 
 .upperLetterJ {
-   /* margin-left: 2px; */
-   margin-right: 3px;
-   /* border-top-width: 2px; */
-   border-right-width: 2px;
+   margin-right: 4px;
+   border-right-width: 3px;
 }
 
 .lowerLetterJ {
-   margin-right: 3px;
-   border-left-width: 2px;
-   border-bottom-width: 2px;
-   border-right-width: 2px;
+   margin-right: 4px;
+   border-left-width: 3px;
+   border-bottom-width: 3px;
+   border-right-width: 3px;
    border-bottom-left-radius: 6px;
    border-bottom-right-radius: 6px;
 }
 
 .upperLeftLetterE {
-   border-top-width: 2px;
+   border-top-width: 3px;
    border-bottom-width: 2px;
 }
 
 .upperRightLetterE {
-   border-top-width: 2px;
+   border-top-width: 3px;
 }
 
 .lowerLeftLetterE {
-   border-bottom-width: 2px;
+   border-bottom-width: 3px;
 }
 
 .lowerRightLetterE {
-   border-bottom-width: 2px;
+   border-bottom-width: 3px;
 }
 
 .menuBars {
    visibility: hidden;
    height: 48px;
-   width: 65px;
+   width: 60px;
 }
 
 .barLines {
    height: 5px;
-   width: 65px;
+   width: 60px;
    background-color: hsla(0, 0%, 20%, 1);
    border-radius: 1px;
    animation: barLines .25s linear;
@@ -371,40 +369,38 @@ elements and animations */
    a.logoIcon {
       position: relative;
       display: grid;
-      grid-template: 24px 18px / 38px 20px 10px;
+      grid-template: 23px 18px / 40px 20px 10px;
    }
 
    .upperLetterJ {
-      /* margin-left: 5px; */
-      margin-right: 8px;
-      /* border-top-width: 5px; */
-      border-right-width: 5px;
+      margin-right: 10px;
+      border-right-width: 7px;
    }
 
    .lowerLetterJ {
-      margin-right: 8px;
-      border-left-width: 5px;
-      border-bottom-width: 5px;
-      border-right-width: 5px;
+      margin-right: 10px;
+      border-left-width: 7px;
+      border-bottom-width: 7px;
+      border-right-width: 7px;
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
    }
 
    .upperLeftLetterE {
-      border-top-width: 5px;
+      border-top-width: 7px;
       border-bottom-width: 5px;
    }
 
    .upperRightLetterE {
-      border-top-width: 5px;
+      border-top-width: 7px;
    }
 
    .lowerLeftLetterE {
-      border-bottom-width: 5px;
+      border-bottom-width: 7px;
    }
 
    .lowerRightLetterE {
-      border-bottom-width: 5px;
+      border-bottom-width: 7px;
    }
 
    .lightAndDarkMode {
