@@ -30,102 +30,42 @@ has all the links within the website */
 header {
    position: fixed;
    width: 100%;
-   background-color: hsla(0, 0%, 95%, 0.95);
+   background-color: hsla(0, 0%, 95%, 1);
    color: hsla(0, 0%, 20%, 1);
    display: grid;
    grid-template-columns: 1fr 3fr 6fr repeat(2, .5fr) 1fr;
    align-items: center;
    z-index: 10;
-   animation: headerLightMode .25s linear;
+   animation: headerLightMode .2s linear;
    animation-fill-mode: forwards;
 }
 
 @keyframes headerLightMode {
-   0% {background-color: hsla(0, 0%, 20%, 0.95); color: hsla(0, 0%, 100%, 1);}
-   50% {background-color: hsla(0, 0%, 60%, 0.95); color: hsla(0, 0%, 60%, 1);}
-   100% {background-color: hsla(0, 0%, 95%, 0.95); color: hsla(0, 0%, 20%, 1);}
+   0% {background-color: hsla(210, 5%, 10%, 1); color: hsla(0, 0%, 100%, 1);}
+   50% {background-color: hsla(0, 0%, 60%, 1); color: hsla(0, 0%, 60%, 1);}
+   100% {background-color: hsla(0, 0%, 95%, 1); color: hsla(0, 0%, 20%, 1);}
 }
 
 header.headerDarkMode {
-   background-color: hsla(0, 0%, 20%, 0.95);
+   background-color: hsla(210, 5%, 10%, 1);
    color: hsla(0, 0%, 100%, 1);
-   animation: headerDarkMode .25s linear;
+   animation: headerDarkMode .2s linear;
    animation-fill-mode: forwards;
 }
 
 @keyframes headerDarkMode {
-   0% {background-color: hsla(0, 0%, 950%, 0.95); color: hsla(0, 0%, 20%, 1);}
-   50% {background-color: hsla(0, 0%, 60%, 0.95); color: hsla(0, 0%, 60%, 1);}
-   100% {background-color: hsla(0, 0%, 20%, 0.95); color: hsla(0, 0%, 100%, 1);}
+   0% {background-color: hsla(0, 0%, 95%, 1); color: hsla(0, 0%, 20%, 1);}
+   50% {background-color: hsla(0, 0%, 60%, 1); color: hsla(0, 0%, 60%, 1);}
+   100% {background-color: hsla(210, 5%, 10%, 1); color: hsla(0, 0%, 100%, 1);}
 }
 
 div#logo {
    grid-column: 2;
+}
+
+#logo img {
    display: flex;
-}
-
-.logoIcon {
-   position: relative;
-   display: grid;
-   grid-template: 10px 8px / 16px 8px 4px;
-   grid-gap: 0;
-}
-
-.logoLetter {
-   border-style: solid;
-}
-
-.blackLetter {
-   border-color: hsla(0, 0%, 20%, 1);
-   animation: blackLetter .25s linear;
-   animation-fill-mode: forwards;
-}
-
-@keyframes blackLetter {
-   0% {border-color: hsla(0, 0%, 100%, 1);}
-   100% {border-color: hsla(0, 0%, 20%, 1);}
-}
-
-.whiteLetter {
-   border-color: hsla(0, 0%, 100%, 1);
-   animation: whiteLetter .25s linear;
-   animation-fill-mode: forwards;
-   }
-
-@keyframes whiteLetter {
-   0% {border-color: hsla(0, 0%, 20%, 1);}
-   100% {border-color: hsla(0, 0%, 100%, 1);}
-}
-
-.upperLetterJ {
-   margin-right: 4px;
-   border-right-width: 2px;
-}
-
-.lowerLetterJ {
-   margin-right: 4px;
-   border-left-width: 2px;
-   border-bottom-width: 2px;
-   border-right-width: 2px;
-   border-bottom-left-radius: 6px;
-   border-bottom-right-radius: 6px;
-}
-
-.upperLeftLetterE {
-   border-top-width: 3px;
-   border-bottom-width: 2px;
-}
-
-.upperRightLetterE {
-   border-top-width: 3px;
-}
-
-.lowerLeftLetterE {
-   border-bottom-width: 3px;
-}
-
-.lowerRightLetterE {
-   border-bottom-width: 3px;
+   height: 20px;
 }
 
 .menuBars {
@@ -135,11 +75,11 @@ div#logo {
 }
 
 .barLines {
-   height: 5px;
+   height: 4px;
    width: 60px;
    background-color: hsla(0, 0%, 20%, 1);
    border-radius: 1px;
-   animation: barLines .25s linear;
+   animation: barLines .2s linear;
    animation-fill-mode: forwards;
 }
 
@@ -150,7 +90,7 @@ div#logo {
 
 .barLinesDarkMode {
    background-color: hsla(0, 0%, 100%, 1);
-   animation: barLinesDarkMode .25s linear;
+   animation: barLinesDarkMode .2s linear;
    animation-fill-mode: forwards;
 }
 
@@ -166,7 +106,6 @@ div#logo {
 
 .secondLine {
    position: relative;
-   height: 3px;
    top: 18px;
 }
 
@@ -193,29 +132,8 @@ nav ul li {
    color: hsla(0, 0%, 50%, 1);
 }
 
-.barColor1 {
-   /* border-bottom: 2px solid hsla(220, 70%, 70%, 1); */
-   border-bottom: 2px solid hsla(205, 60%, 55%, 1);
-}
-
-.barColor2 {
-   /* border-bottom: 2px solid hsla(50, 90%, 60%, 1); */
-   border-bottom: 2px solid hsla(205, 60%, 55%, 1);
-}
-
-.barColor3 {
-   /* border-bottom: 2px solid hsla(270, 50%, 50%, 1); */
-   border-bottom: 2px solid hsla(205, 60%, 55%, 1);
-}
-
-.barColor4 {
-   /* border-bottom: 2px solid hsla(150, 50%, 60%, 1); */
-   border-bottom: 2px solid hsla(205, 60%, 55%, 1);
-}
-
-.barColor5 {
-   /* border-bottom: 2px solid hsla(0, 75%, 60%, 1); */
-   border-bottom: 2px solid hsla(205, 60%, 55%, 1);
+.barColor {
+   border-bottom: 2px solid hsla(210, 75%, 35%, 1);
 }
 
 .removeColor {
@@ -228,7 +146,7 @@ nav ul li {
    background-color: hsla(0, 0%, 20%, .7);
    grid-column: 4;
    justify-self: center;
-   animation: horizontalLine .25s linear;
+   animation: horizontalLine .2s linear;
    animation-fill-mode: forwards;
 }
 
@@ -239,7 +157,7 @@ nav ul li {
 
 .horizontalLineDarkMode {
    background-color: hsla(0, 0%, 100%, .7);
-   animation: horizontalLineDarkMode .25s linear;
+   animation: horizontalLineDarkMode .2s linear;
    animation-fill-mode: forwards;
    }
 
@@ -271,7 +189,7 @@ elements and animations */
    border-radius: 50%;
    bottom: 6px;
    z-index: -10;
-   animation: sun .25s linear;
+   animation: sun .2s linear;
    animation-fill-mode: forwards;
 }
 
@@ -282,7 +200,7 @@ elements and animations */
 }
 
 .moon {
-   animation: moon .25s linear;
+   animation: moon .2s linear;
    animation-fill-mode: forwards;
 }
 
@@ -300,7 +218,7 @@ elements and animations */
    border-radius: 45%;
    z-index: -20;
    transform-origin: center;
-   animation: sunBeams .25s linear;
+   animation: sunBeams .2s linear;
    animation-fill-mode: forwards;
 }
 
@@ -311,7 +229,7 @@ elements and animations */
 }
 
 .transparentSunBeams {
-   animation: transparentSunBeams .25s linear;
+   animation: transparentSunBeams .2s linear;
    animation-fill-mode: forwards;
 }
 
@@ -342,23 +260,23 @@ elements and animations */
    header {
       grid-template-columns: 1fr 3fr 4fr 3fr 1fr;
       grid-template-rows: 120px;
-      background-color: hsla(0, 0%, 95%, .95);
+      background-color: hsla(0, 0%, 95%, 1);
    }
 
    @keyframes headerLightMode {
-      0% {background-color: hsla(0, 0%, 20%, .95); color: hsla(0, 0%, 100%, 1);}
-      50% {background-color: hsla(0, 0%, 60%, .95); color: hsla(0, 0%, 60%, 1);}
-      100% {background-color: hsla(0, 0%, 95%, .95); color: hsla(0, 0%, 20%, 1);}
+      0% {background-color: hsla(210, 5%, 10%, 1); color: hsla(0, 0%, 100%, 1);}
+      50% {background-color: hsla(0, 0%, 60%, 1); color: hsla(0, 0%, 60%, 1);}
+      100% {background-color: hsla(0, 0%, 95%, 1); color: hsla(0, 0%, 20%, 1);}
    }
 
    header.headerDarkMode {
-      background-color: hsla(0, 0%, 20%, .95);
+      background-color: hsla(210, 5%, 10%, 1);
    }
 
    @keyframes headerDarkMode {
-      0% {background-color: hsla(0, 0%, 95%, .95); color: hsla(0, 0%, 20%, 1);}
-      50% {background-color: hsla(0, 0%, 60%, .95); color: hsla(0, 0%, 60%, 1);}
-      100% {background-color: hsla(0, 0%, 20%, .95); color: hsla(0, 0%, 100%, 1);}
+      0% {background-color: hsla(0, 0%, 95%, 1); color: hsla(0, 0%, 20%, 1);}
+      50% {background-color: hsla(0, 0%, 60%, 1); color: hsla(0, 0%, 60%, 1);}
+      100% {background-color: hsla(210, 5%, 10%, 1); color: hsla(0, 0%, 100%, 1);}
    }
 
    div#logo {
@@ -366,46 +284,12 @@ elements and animations */
       justify-self: center;
    }
 
-   a.logoIcon {
-      position: relative;
-      display: grid;
-      grid-template: 25px 20px / 40px 20px 10px;
-   }
-
-   .upperLetterJ {
-      margin-right: 10px;
-      border-right-width: 5px;
-   }
-
-   .lowerLetterJ {
-      margin-right: 10px;
-      border-left-width: 5px;
-      border-bottom-width: 5px;
-      border-right-width: 5px;
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
-   }
-
-   .upperLeftLetterE {
-      border-top-width: 7px;
-      border-bottom-width: 5px;
-   }
-
-   .upperRightLetterE {
-      border-top-width: 7px;
-   }
-
-   .lowerLeftLetterE {
-      border-bottom-width: 7px;
-   }
-
-   .lowerRightLetterE {
-      border-bottom-width: 7px;
+   #logo img {
+      display: flex;
+      height: 50px;
    }
 
    .lightAndDarkMode {
-      -webkit-transform: scale(2.5);
-      -moz-transform: scale(2.5);
       transform: scale(2.5);
       right: 20px;
       grid-area: 1 / 4;
@@ -451,7 +335,7 @@ elements and animations */
    }
 
    .grayBlock {
-      background-color: hsla(0, 0%, 20%, 1);
+      background-color: hsla(210, 5%, 10%, 0.95);
    }
 
    .allScreenBlock {
@@ -468,13 +352,13 @@ elements and animations */
       top: -2150px;
       width: 100%;
       height: 100vh;
-      background-color: hsla(0, 0%, 20%, .95);
+      background-color: hsla(210, 5%, 10%, 0.95);
       z-index: -15;
    }
 
    .slideDown {
       position: absolute;
-      animation: slideDown .25s ease-out;
+      animation: slideDown .2s ease-out;
       animation-fill-mode: forwards;
    }
 
@@ -485,7 +369,7 @@ elements and animations */
 
    .slideUp {
       position: absolute;
-      animation: slideUp .25s ease-in;
+      animation: slideUp .2s ease-in;
       animation-fill-mode: forwards;
    }
 
@@ -496,24 +380,24 @@ elements and animations */
 
    .allScreenLightBlockAnimation {
       top: 0px;
-      animation: allScreenLightBlockAnimation .25s linear;
+      animation: allScreenLightBlockAnimation .2s linear;
       animation-fill-mode: forwards;
    }
 
    @keyframes allScreenLightBlockAnimation {
-      0% {background-color: hsla(0, 0%, 20%, .95);}
+      0% {background-color: hsla(210, 5%, 10%, 0.95);}
       100% {background-color: hsla(0, 0%, 95%, .95);}
    }
 
    .allScreenDarkBlockAnimation {
       top: 0px;
-      animation: allScreenDarkBlockAnimation .25s linear;
+      animation: allScreenDarkBlockAnimation .2s linear;
       animation-fill-mode: forwards;
    }
 
    @keyframes allScreenDarkBlockAnimation {
       0% {background-color: hsla(0, 0%, 95%, .95);}
-      100% {background-color: hsla(0, 0%, 20%, .95);}
+      100% {background-color: hsla(210, 5%, 10%, 0.95);}
    }
 
    nav ul {
@@ -540,7 +424,7 @@ elements and animations */
    .firstLineOpen {
       position: relative;
       animation-name: upperLine;
-      animation-duration: .25s;
+      animation-duration: .2s;
       animation-fill-mode: forwards;
    }
 
@@ -553,7 +437,7 @@ elements and animations */
    .secondLineOpen {
       position: relative;
       animation-name: middleLine;
-      animation-duration: .25s;
+      animation-duration: .2s;
       animation-fill-mode: forwards;
    }
 
@@ -566,7 +450,7 @@ elements and animations */
    .thirdLineOpen {
       position: relative;
       animation-name: lowerLine;
-      animation-duration: .25s;
+      animation-duration: .2s;
       animation-fill-mode: forwards;
    }
 
@@ -580,7 +464,7 @@ elements and animations */
    .firstLineClose {
       position: relative;
       animation-name: upperLineBack;
-      animation-duration: .25s;
+      animation-duration: .2s;
       animation-fill-mode: forwards;
    }
 
@@ -593,7 +477,7 @@ elements and animations */
    .secondLineClose {
       position: relative;
       animation-name: middleLineBack;
-      animation-duration: .25s;
+      animation-duration: .2s;
       animation-fill-mode: forwards;
    }
 
@@ -606,7 +490,7 @@ elements and animations */
    .thirdLineClose {
       position: relative;
       animation-name: lowerLineBack;
-      animation-duration: .25s;
+      animation-duration: .2s;
       animation-fill-mode: forwards;
    }
 
@@ -616,23 +500,7 @@ elements and animations */
       100% {top: 33px;}
    }
 
-   .barColor1 {
-      border-width: 5px;
-   }
-
-   .barColor2 {
-      border-width: 5px;
-   }
-
-   .barColor3 {
-      border-width: 5px;
-   }
-
-   .barColor4 {
-      border-width: 5px;
-   }
-
-   .barColor5 {
+   .barColor {
       border-width: 5px;
    }
 
@@ -646,7 +514,7 @@ elements and animations */
 the "homeSection" */
 
 section#homeSection {
-   background-image: url('../pictures/sydney.jpg');
+   background-image: url('../images/background/sydney.jpg');
    background-size: cover;
    background-position: 0% 0%;
    color: hsla(0, 100%, 100%, 1);
@@ -659,7 +527,6 @@ section#homeSection {
 }
 
 div.introMessage {
-   /* grid-area: 3 / 2 / span 2 / span 1; */
    grid-area: 3 / 2 / span 1 / span 1;
    display: grid;
    grid-template-rows: repeat(2, 1fr) .5fr;
@@ -719,7 +586,7 @@ a.arrow {
    transform: rotate(30deg);
    border-radius: 1.5px 0 0 1.5px;
    background-color: hsla(0, 0%, 100%, 1);
-   animation: leftSide .25s linear;
+   animation: leftSide .2s linear;
    animation-fill-mode: both;
 }
 
@@ -736,7 +603,7 @@ a.arrow {
    transform: rotate(-30deg);
    border-radius: 0 1.5px 1.5px 0;
    background-color: hsla(0, 0%, 100%, 1);
-   animation: rightSide .25s linear;
+   animation: rightSide .2s linear;
    animation-fill-mode: both;
 }
 
@@ -754,12 +621,12 @@ a.arrow {
 }
 
 div.blueArrow {
-   background-color: hsla(205, 60%, 55%, 1);
+   background-color: hsla(210, 75%, 35%, 1);
 }
 
 .flatArrow {
    animation-name: flatArrow;
-   animation-duration: .25s;
+   animation-duration: .2s;
    animation-timing-function: linear;
    animation-fill-mode: both;
 }
@@ -829,7 +696,7 @@ section.skills {
 
 .fab, .fas, .far {
    font-size: 3rem;
-   color: hsla(205, 60%, 55%, 1);
+   color: hsla(210, 75%, 35%, 1);
 }
 
 /* This section is the style which is used on
@@ -859,23 +726,23 @@ section.contact {
 }
 
 section.sectionLightMode {
-   animation: sectionLightMode .25s linear;
+   animation: sectionLightMode .2s linear;
    animation-fill-mode: forwards;
 }
 
 @keyframes sectionLightMode {
-   0% {background-color: hsla(0, 0%, 12%, 1); color: hsla(0, 0%, 100%, 1);}
+   0% {background-color: hsla(0, 0%, 14%, 1); color: hsla(0, 0%, 100%, 1);}
    100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
 }
 
 section.sectionDarkMode {
-   animation: sectionDarkMode .25s linear;
+   animation: sectionDarkMode .2s linear;
    animation-fill-mode: forwards;
 }
 
 @keyframes sectionDarkMode {
    0% {background-color: hsla(0, 0%, 100%, 1); color: hsla(0, 0%, 20%, 1);}
-   100% {background-color: hsla(0, 0%, 12%, 1); color: hsla(0, 0%, 100%, 1);}
+   100% {background-color: hsla(0, 0%, 14%, 1); color: hsla(0, 0%, 100%, 1);}
 }
 
 a.arrowUp {
@@ -897,7 +764,7 @@ a.arrowUp {
 
 .leftSideTopAnimation {
    animation-name: leftSideTopAnimation;
-   animation-duration: .25s;
+   animation-duration: .2s;
    animation-timing-function: linear;
    animation-fill-mode: forwards;
 }
@@ -919,7 +786,7 @@ a.arrowUp {
 
 .rightSideTopAnimation {
    animation-name: rightSideTopAnimation;
-   animation-duration: .25s;
+   animation-duration: .2s;
    animation-timing-function: linear;
    animation-fill-mode: forwards;
 }
@@ -958,21 +825,21 @@ is located at the bottom of the website */
 
 footer {
    width: 100%;
-   background-color: hsla(0, 0%, 90%, 1);
+   background-color: hsla(0, 0%, 95%, 0.95);
    color: hsla(0, 0%, 60%, 1);
    display: grid;
    grid-template-columns: 1fr 10fr 1fr;
 }
 
 footer.footerDarkMode {
-   background-color: hsla(0, 0%, 18%, 1);
+   background-color: hsla(210, 5%, 10%, 0.95);
    color: hsla(0, 0%, 60%, 1);
 }
 
 .fixedFooter {
    position: fixed;
    bottom: 0;
-   animation: popUpFooter .25s ease-out;
+   animation: popUpFooter .2s ease-out;
    animation-fill-mode: forwards;
 }
 
@@ -984,7 +851,7 @@ footer.footerDarkMode {
 .popOutFooter {
    position: fixed;
    bottom: -6rem;
-   animation: popOutFooter .25s ease-in;
+   animation: popOutFooter .2s ease-in;
    animation-fill-mode: forwards;
 }
 

@@ -225,6 +225,14 @@ $(document).ready(() => {
          $('#allScreenBlock').removeClass('allScreenDarkBlockAnimation');
       }
 
+      // This section changes the src of the tag <img> which contains the logo
+
+      if ($('.sun').hasClass('moon')) {
+         $('#logoImage').attr('src', './images/logo/logoDarkMode.png');
+      } else {
+         $('#logoImage').attr('src', './images/logo/logoLightMode.png');
+      }
+
    });
 
    // This function will switch all the properties needed between light
@@ -234,8 +242,7 @@ $(document).ready(() => {
       $('#webMenu').toggleClass('headerDarkMode');
       $('.horizontalLine').toggleClass('horizontalLineDarkMode');
       $('.barLines').toggleClass('barLinesDarkMode');
-      $('.logoLetter').toggleClass('blackLetter');
-      $('.logoLetter').toggleClass('whiteLetter');
+
 
       $('.section').toggleClass('sectionLightMode');
       $('.section').toggleClass('sectionDarkMode');
@@ -274,23 +281,23 @@ $(document).ready(() => {
          if (windowPosition < $homeHeight) {
             $('.navigationLinks').addClass('removeColor');
             $('.homeLink').removeClass('removeColor');
-            $('.homeLink').addClass('barColor1');
+            $('.homeLink').addClass('barColor');
          } else if (windowPosition >= $homeHeight && windowPosition < $aboutHeight) {
             $('.navigationLinks').addClass('removeColor');
             $('.aboutLink').removeClass('removeColor');
-            $('.aboutLink').addClass('barColor2');
+            $('.aboutLink').addClass('barColor');
          } else if (windowPosition >= $aboutHeight && windowPosition < $skillsHeight) {
             $('.navigationLinks').addClass('removeColor');
             $('.skillsLink').removeClass('removeColor');
-            $('.skillsLink').addClass('barColor3');
+            $('.skillsLink').addClass('barColor');
          } else if (windowPosition >= $skillsHeight && windowPosition < $projectsLink) {
             $('.navigationLinks').addClass('removeColor');
             $('.projectsLink').removeClass('removeColor');
-            $('.projectsLink').addClass('barColor4');
+            $('.projectsLink').addClass('barColor');
          } else if (windowPosition >= $projectsLink && windowPosition < $contactHeight) {
             $('.navigationLinks').addClass('removeColor');
             $('.contactLink').removeClass('removeColor');
-            $('.contactLink').addClass('barColor5');
+            $('.contactLink').addClass('barColor');
          }
       });
    };
@@ -481,7 +488,7 @@ $(document).ready(() => {
       }
    });
 
-   // Change the color to blue when hovers the logo or the light/dark mode
+   // Change the color to blue when hovers the arrows on the light/dark mode
 
    const blueArrowHover = () => {
       $('.fourArrows').on('mouseover', () => {
