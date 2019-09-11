@@ -159,6 +159,11 @@ $(document).ready(() => {
             $('.myName').html(myNameText);
             changingGreeting();
             endFunction++;
+            // This part changes the opacity of the ".message" after 0.5s of
+            // displaying the "#greeting" and ".myName"
+            setTimeout(() => {
+               $('.message').addClass('showMessage');
+            }, 500);
          }
       }, 65);
 
