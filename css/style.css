@@ -539,6 +539,10 @@ h1.myName {
    grid-row: 2 / span 1;
 }
 
+.hiddenCharacter {
+   opacity: 0;
+}
+
 .verticalBarAnimation {
    animation: verticalBarAnimation 1.15s linear;
    animation-iteration-count: infinite;
@@ -553,7 +557,7 @@ h1.myName {
 
 h2#greeting {
    font-weight: 600;
-   font-size: 2.5rem;
+   font-size: 2.65rem;
    grid-row: 1 / span 1;
    align-self: end;
 }
@@ -587,6 +591,21 @@ a.arrow {
    align-self: center;
    display: flex;
    align-items: center;
+}
+
+.hiddenArrow {
+   visibility: hidden;
+}
+
+.showArrow {
+   animation: showArrow .4s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes showArrow {
+   0% {opacity: 0;}
+   50% {opacity: .2;}
+   100% {opacity: 1;}
 }
 
 .leftSide {

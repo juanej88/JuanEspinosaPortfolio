@@ -160,9 +160,13 @@ $(document).ready(() => {
             changingGreeting();
             endFunction++;
             // This part changes the opacity of the ".message" after 0.5s of
-            // displaying the "#greeting" and ".myName"
+            // displaying the "#greeting" and ".myName". Also, it shows the arrow,
+            // when removing the class '.hiddenArrow' to '.arrow' after .2s
             setTimeout(() => {
                $('.message').addClass('showMessage');
+               $('.arrow').removeClass('hiddenArrow');
+               $('.arrow').addClass('showArrow');
+
             }, 500);
          }
       }, 65);
