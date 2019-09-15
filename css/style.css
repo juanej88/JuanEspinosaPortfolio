@@ -335,7 +335,7 @@ elements and animations */
    }
 
    .grayBlock {
-      background-color: hsla(210, 5%, 10%, 0.95);
+      background-color: hsla(210, 10%, 10%, 0.95);
    }
 
    .allScreenBlock {
@@ -352,7 +352,7 @@ elements and animations */
       top: -2150px;
       width: 100%;
       height: 100vh;
-      background-color: hsla(210, 5%, 10%, 0.95);
+      background-color: hsla(210, 10%, 10%, 0.95);
       z-index: -15;
    }
 
@@ -385,7 +385,7 @@ elements and animations */
    }
 
    @keyframes allScreenLightBlockAnimation {
-      0% {background-color: hsla(210, 5%, 10%, 0.95);}
+      0% {background-color: hsla(210, 10%, 10%, 0.95);}
       100% {background-color: hsla(0, 0%, 95%, .95);}
    }
 
@@ -397,7 +397,7 @@ elements and animations */
 
    @keyframes allScreenDarkBlockAnimation {
       0% {background-color: hsla(0, 0%, 95%, .95);}
-      100% {background-color: hsla(210, 5%, 10%, 0.95);}
+      100% {background-color: hsla(210, 10%, 10%, 0.95);}
    }
 
    nav ul {
@@ -514,6 +514,7 @@ elements and animations */
 the "homeSection" */
 
 section#homeSection {
+   position: relative;
    background-image: url('../images/background/sydney.jpg');
    background-size: cover;
    background-position: 0% 0%;
@@ -526,13 +527,46 @@ section#homeSection {
    align-items: end;
 }
 
+.startBackground {
+   position: fixed;
+   height: 100vh;
+   width: 100vw;
+   background-color: hsla(205, 10%, 10%, 1);
+   z-index: 20;
+}
+
+.hiddenStartBackground {
+   animation: hiddenStartBackground .2s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes hiddenStartBackground {
+   0% {opacity: 1; visibility: visible;}
+   99% {opacity: 0; visibility: visible;}
+   100% {opacity: 0; visibility: hidden;}
+}
+
 div.introMessage {
+   position: relative;
    grid-area: 3 / 2 / span 1 / span 1;
    display: grid;
    grid-template-rows: repeat(2, 1fr) .5fr;
+   z-index: 25;
+   top: calc(-100vh*.2);
+}
+
+div.introMessagePosition {
+   animation: introMessagePosition .2s linear;
+   animation-fill-mode: forwards;
+}
+
+@keyframes introMessagePosition {
+   0% {top: calc(-100vh*.2);}
+   100% {top: 0;}
 }
 
 h1.myName {
+   position: relative;
    font-weight: 600;
    font-size: 3rem;
    margin: 0.6rem 0 0.6rem 0;
@@ -555,18 +589,25 @@ h1.myName {
    100% {opacity: 0}
 }
 
-h2#greeting {
+h2.greeting {
+   position: relative;
    font-weight: 600;
    font-size: 2.65rem;
    grid-row: 1 / span 1;
    align-self: end;
+   text-align: center;
+}
+
+h2.leftTextAlign {
+   text-align: left;
 }
 
 p.message {
-   color: hsla(205, 10%, 10%, 0.2);
+   color: hsla(205, 10%, 10%, 0);
    font-weight: 600;
    font-size: 1.3rem;
    line-height: 2.25rem;
+   text-align: left;
 }
 
 .showMessage {
@@ -575,7 +616,7 @@ p.message {
 }
 
 @keyframes showMessage {
-   0% {color: hsla(205, 10%, 10%, 0.2);}
+   0% {color: hsla(205, 10%, 10%, 0);}
    100% {color: hsla(0, 0%, 100%, 1);}
 }
 
@@ -591,6 +632,7 @@ a.arrow {
    align-self: center;
    display: flex;
    align-items: center;
+   z-index: 25;
 }
 
 .hiddenArrow {
@@ -671,9 +713,7 @@ div.blueArrow {
 @media only screen and (max-width:950px), (orientation:portrait) {
 
    div.introMessage {
-      grid-area: 3 / 2 / span 1 / span 1;
-      position: relative;
-      bottom: 100px;
+      padding-bottom: 100px;
    }
 
    a.arrow {
@@ -861,7 +901,7 @@ footer {
 }
 
 footer.footerDarkMode {
-   background-color: hsla(210, 5%, 10%, 0.95);
+   background-color: hsla(210, 10%, 10%, 0.95);
    color: hsla(0, 0%, 60%, 1);
 }
 
