@@ -167,11 +167,6 @@ $(document).ready(() => {
                $('.arrow').removeClass('hiddenArrow');
                $('.arrow').addClass('showArrow');
 
-               setTimeout(() => {
-                  $('.startBackground').addClass('hiddenStartBackground');
-                  $('.introMessage').addClass('introMessagePosition');
-               }, 1200);
-
             }, 500);
          }
       }, 65);
@@ -217,18 +212,17 @@ $(document).ready(() => {
 
    $('#greeting').addClass('verticalBarAnimation');
 
-   // This function calls the typingGreeting after 2.75s and adds .leftTextAlign
-   // to #greeting after 2s
+   // This function hides the .startBackground after 2s
 
    setTimeout(() => {
-
-      setTimeout(() => {
-         typingGreeting();
-      }, 750);
-
-      $('#greeting').addClass('leftTextAlign');
-
+      $('.startBackground').addClass('hiddenStartBackground');
    }, 2000);
+
+   // This function calls the typingGreeting after 4s
+
+   setTimeout(() => {
+      typingGreeting();
+   }, 4000);
 
    // This function animates the function light/dark mode
 
