@@ -855,7 +855,7 @@ section.sectionLightMode {
 }
 
 @keyframes sectionLightMode {
-   0% {background-color: hsla(0, 0%, 14%, 1); color: hsla(0, 0%, 100%, 1);}
+   0% {background-color: hsla(0, 0%, 4%, 1); color: hsla(0, 0%, 100%, 1);}
    100% {background-color: hsla(0, 0%, 100%, 1); color: hsla(205, 10%, 10%, 1);}
 }
 
@@ -866,7 +866,7 @@ section.sectionDarkMode {
 
 @keyframes sectionDarkMode {
    0% {background-color: hsla(0, 0%, 100%, 1); color: hsla(205, 10%, 10%, 1);}
-   100% {background-color: hsla(0, 0%, 14%, 1); color: hsla(0, 0%, 100%, 1);}
+   100% {background-color: hsla(0, 0%, 4%, 1); color: hsla(0, 0%, 100%, 1);}
 }
 
 a.arrowUp {
